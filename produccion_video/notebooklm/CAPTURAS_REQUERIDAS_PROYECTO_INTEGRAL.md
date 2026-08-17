@@ -33,3 +33,12 @@ Disponibilidad en Calendar → cotización y confirmación explícita → regist
 - Tres publicidades verticales.
 - Video Overview de la parte web de Iván.
 
+## Estado de recepción
+
+Las cinco pruebas fueron recibidas, sanitizadas y guardadas en `notebooklm/capturas/`. Los originales con datos personales no se incorporan al repositorio.
+
+- [x] WhatsApp: disponibilidad y alternativas.
+- [x] WhatsApp: confirmación y registro.
+- [x] Calendar: reservas y ocupación.
+- [x] Sheets: registro estructurado.
+- [x] Gmail: confirmación enviada.

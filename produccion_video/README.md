@@ -13,6 +13,7 @@ El primer Video Overview de NotebookLM, dedicado a la experiencia web de Iván, 
 - `notebooklm/FUENTE_NOTEBOOKLM_PROYECTO_INTEGRAL.md`.
 - `notebooklm/PROMPT_VIDEO_NOTEBOOKLM_PROYECTO_INTEGRAL.md`.
 - `notebooklm/CAPTURAS_REQUERIDAS_PROYECTO_INTEGRAL.md`.
+- `notebooklm/capturas/`: cinco evidencias sanitizadas del flujo de Miguel.
 
 Las publicidades recibidas, sus textos editables y las exportaciones finales están organizadas en `publicidad/`. Las versiones finales son:
 
@@ -58,6 +59,6 @@ Para avanzar rápido, Gemini sirve para generar cada clip. Flow es preferible cu
 
 ## NotebookLM
 
-El Video Overview individual de Iván funciona como capítulo de la experiencia web. Para generar la versión completa, crear un notebook separado y cargar la fuente integral, las dos memorias técnicas, el mapa conceptual final y las cinco capturas sanitizadas de la automatización. Elegir español y solicitar aproximadamente 3 a 4 minutos mediante el prompt integral.
+El Video Overview individual de Iván funciona como capítulo de la experiencia web. Para generar la versión completa se creó un notebook separado con la fuente integral, las dos memorias técnicas, el mapa conceptual final y las cinco capturas sanitizadas de la automatización. Elegir español y solicitar aproximadamente 3 a 4 minutos mediante el prompt integral.
 
 El resultado de NotebookLM será el primer montaje narrativo. Antes de entregarlo hay que revisar atribuciones, secuencia técnica, datos visibles y cualquier afirmación sobre disponibilidad, confirmación o pago.

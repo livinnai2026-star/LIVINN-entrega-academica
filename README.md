@@ -73,4 +73,4 @@ El proyecto documenta también su comunicación mediante tres publicidades verti
 - [Consulta por WhatsApp](produccion_video/publicidad/finales/livinn_ad_02_consulta_9x16.mp4)
 - [Cuatro refugios](produccion_video/publicidad/finales/livinn_ad_03_refugios_9x16.mp4)
 
-El Video Overview de la experiencia web de Iván ya está terminado y se conserva en `produccion_video/notebooklm/salidas/`. También están preparadas la fuente, el prompt y la lista de capturas para generar un segundo video integral de 3–4 minutos con el trabajo de Iván y Miguel. El cierre conjunto deberá incorporar evidencia real sanitizada y revisión humana.
+El Video Overview de la experiencia web de Iván ya está terminado y se conserva en `produccion_video/notebooklm/salidas/`. También están preparadas la fuente, el prompt y cinco capturas sanitizadas para generar un segundo video integral de 3–4 minutos con el trabajo de Iván y Miguel. El cierre conjunto deberá conservar la revisión humana de atribuciones y afirmaciones técnicas.
