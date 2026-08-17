@@ -73,4 +73,4 @@ El proyecto documenta también su comunicación mediante tres publicidades verti
 - [Consulta por WhatsApp](produccion_video/publicidad/finales/livinn_ad_02_consulta_9x16.mp4)
 - [Cuatro refugios](produccion_video/publicidad/finales/livinn_ad_03_refugios_9x16.mp4)
 
-Las memorias sanitizadas, mapas conceptuales y fuentes específicas de Iván están preparados para NotebookLM. Los videos generados funcionan como material explicativo intermedio; el cierre conjunto de 3–4 minutos deberá incorporar evidencia real de la web y revisión humana.
+El Video Overview de la experiencia web de Iván ya está terminado y se conserva en `produccion_video/notebooklm/salidas/`. También están preparadas la fuente, el prompt y la lista de capturas para generar un segundo video integral de 3–4 minutos con el trabajo de Iván y Miguel. El cierre conjunto deberá incorporar evidencia real sanitizada y revisión humana.
