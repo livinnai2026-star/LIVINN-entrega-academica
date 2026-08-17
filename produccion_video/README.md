@@ -5,13 +5,14 @@ Esta carpeta reúne una guía breve para producir tres anuncios verticales y un 
 ## Entregables
 
 - Tres publicidades verticales de 7–8 segundos.
-- Un video horizontal de aproximadamente 4 minutos para Raúl.
+- Un video horizontal integral de 6:22 para Raúl.
 - Capturas reutilizables de la web en desktop y móvil.
 
-Los Video Overviews terminados se conservan en:
+El Video Overview oficial de la entrega se conserva en:
 
-- `notebooklm/salidas/LIVINN_Caso_MVP_Web_Ivan.mp4`: capítulo de la experiencia web, 1:29.
 - `notebooklm/salidas/LIVINN_Caso_de_Estudio_Integral.mp4`: caso completo de Iván y Miguel, 6:22.
+
+El capítulo individual de la experiencia web se archivó fuera del repositorio público. Los capítulos individuales sólo se incorporarán si se decide publicar una versión equilibrada y sanitizada para cada integrante.
 
 Para producir el video integral se prepararon:
 
