@@ -75,3 +75,17 @@ El proyecto documenta también su comunicación mediante tres publicidades verti
 - [Caso de estudio integral: Iván + Miguel](produccion_video/notebooklm/salidas/LIVINN_Caso_de_Estudio_Integral.mp4)
 
 El caso de estudio integral utiliza fuentes técnicas y capturas sanitizadas. Su duración final es de 6:22 y conserva la separación de responsabilidades entre la experiencia web, la automatización y la validación administrativa.
+
+## Recursos, tiempo e inversión
+
+LIVINN fue construido como un MVP funcional mediante desarrollo web asistido por IA, automatización e infraestructura cloud. La ejecución demandó aproximadamente **30 horas totales de trabajo del equipo**, distribuidas en dos jornadas intensivas.
+
+La inversión tecnológica atribuible al proyecto fue estimada en **US$44**:
+
+- ChatGPT/Codex: US$21 prorrateados.
+- Gemini: US$6 prorrateados.
+- OpenRouter: US$10 de consumo.
+- VPS: US$7 correspondientes a un mes.
+- GitHub, Vercel, Google Workspace y Composio: planes gratuitos.
+
+> Los costos de las suscripciones fueron prorrateados según el porcentaje aproximado de uso destinado a LIVINN. La cifra representa una estimación del costo tecnológico del MVP y no incluye la valorización económica de las horas del equipo.
