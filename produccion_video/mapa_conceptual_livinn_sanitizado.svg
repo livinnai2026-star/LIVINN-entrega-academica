@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Mapa conceptual sanitizado del proyecto LIVINN</title>
+  <desc id="desc">Dos recorridos muestran la construcción de la experiencia web a cargo de Iván y la automatización operativa a cargo de Miguel, conectados mediante WhatsApp.</desc>
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#2b241f" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#473d35"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#b9612c"/>
+    </marker>
+    <style>
+      .title { font: 700 42px Arial, sans-serif; fill: #211d1a; letter-spacing: 1px; }
+      .subtitle { font: 400 20px Arial, sans-serif; fill: #62574e; }
+      .lane-title { font: 700 24px Arial, sans-serif; fill: #211d1a; letter-spacing: .5px; }
+      .lane-copy { font: 400 16px Arial, sans-serif; fill: #62574e; }
+      .node-title { font: 700 18px Arial, sans-serif; fill: #211d1a; }
+      .node-copy { font: 400 15px Arial, sans-serif; fill: #4f463f; }
+      .node-copy-light { font: 400 15px Arial, sans-serif; fill: #fffaf2; }
+      .node-title-light { font: 700 18px Arial, sans-serif; fill: #fffaf2; }
+      .small { font: 400 14px Arial, sans-serif; fill: #6f6258; }
+      .flow { fill: none; stroke: #473d35; stroke-width: 3; marker-end: url(#arrow-dark); }
+      .flow-orange { fill: none; stroke: #b9612c; stroke-width: 4; marker-end: url(#arrow-orange); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#f7efe2"/>
+  <circle cx="1500" cy="80" r="150" fill="#c67139" opacity="0.08"/>
+  <circle cx="80" cy="930" r="190" fill="#7a8a5e" opacity="0.10"/>
+
+  <text x="80" y="70" class="title">LIVINN · DEL CONCEPTO A LA OPERACIÓN</text>
+  <text x="80" y="105" class="subtitle">Mapa académico sanitizado · experiencia digital + asistente de reservas</text>
+
+  <rect x="60" y="145" width="1480" height="280" rx="30" fill="#fffaf2" filter="url(#shadow)"/>
+  <rect x="60" y="145" width="16" height="280" rx="8" fill="#c67139"/>
+  <text x="100" y="188" class="lane-title">IVÁN · CONSTRUCCIÓN DE LA EXPERIENCIA WEB</text>
+  <text x="100" y="216" class="lane-copy">Diseño, integración visual, experiencia, calidad, control de versiones y publicación</text>
+
+  <g filter="url(#shadow)">
+    <rect x="100" y="255" width="190" height="115" rx="18" fill="#f3dfc5"/>
+    <rect x="335" y="255" width="190" height="115" rx="18" fill="#f3dfc5"/>
+    <rect x="570" y="255" width="190" height="115" rx="18" fill="#f3dfc5"/>
+    <rect x="805" y="255" width="190" height="115" rx="18" fill="#f3dfc5"/>
+    <rect x="1040" y="255" width="190" height="115" rx="18" fill="#f3dfc5"/>
+    <rect x="1275" y="255" width="190" height="115" rx="18" fill="#c67139"/>
+  </g>
+
+  <text x="195" y="292" text-anchor="middle" class="node-title">Objetivo</text>
+  <text x="195" y="319" text-anchor="middle" class="node-copy"><tspan x="195">Contenido, ubicación</tspan><tspan x="195" dy="21">tarifas y alcance</tspan></text>
+  <text x="430" y="292" text-anchor="middle" class="node-title">Integración visual</text>
+  <text x="430" y="319" text-anchor="middle" class="node-copy"><tspan x="430">23 posiciones</tspan><tspan x="430" dy="21">aprobadas</tspan></text>
+  <text x="665" y="292" text-anchor="middle" class="node-title">Web responsive</text>
+  <text x="665" y="319" text-anchor="middle" class="node-copy"><tspan x="665">Móvil, desktop</tspan><tspan x="665" dy="21">y accesibilidad</tspan></text>
+  <text x="900" y="292" text-anchor="middle" class="node-title">Consulta guiada</text>
+  <text x="900" y="319" text-anchor="middle" class="node-copy"><tspan x="900">Unidad, fechas</tspan><tspan x="900" dy="21">y huéspedes</tspan></text>
+  <text x="1135" y="292" text-anchor="middle" class="node-title">QA + respaldos</text>
+  <text x="1135" y="319" text-anchor="middle" class="node-copy"><tspan x="1135">Auditorías, GitHub</tspan><tspan x="1135" dy="21">ramas y tag</tspan></text>
+  <text x="1370" y="292" text-anchor="middle" class="node-title-light">Vercel</text>
+  <text x="1370" y="319" text-anchor="middle" class="node-copy-light"><tspan x="1370">Producción y</tspan><tspan x="1370" dy="21">versión anterior</tspan></text>
+
+  <path d="M290 312 H325" class="flow"/>
+  <path d="M525 312 H560" class="flow"/>
+  <path d="M760 312 H795" class="flow"/>
+  <path d="M995 312 H1030" class="flow"/>
+  <path d="M1230 312 H1265" class="flow"/>
+
+  <rect x="315" y="465" width="970" height="115" rx="58" fill="#292521" filter="url(#shadow)"/>
+  <text x="410" y="510" text-anchor="middle" class="node-title-light">HUÉSPED</text>
+  <text x="410" y="537" text-anchor="middle" class="node-copy-light">Explora y elige</text>
+  <path d="M500 522 H600" class="flow-orange"/>
+  <text x="720" y="510" text-anchor="middle" class="node-title-light">SITIO LIVINN</text>
+  <text x="720" y="537" text-anchor="middle" class="node-copy-light">Prepara la consulta</text>
+  <path d="M835 522 H935" class="flow-orange"/>
+  <text x="1080" y="510" text-anchor="middle" class="node-title-light">WHATSAPP</text>
+  <text x="1080" y="537" text-anchor="middle" class="node-copy-light">Entrega el mensaje estructurado</text>
+  <path d="M1370 370 C1370 430 1230 450 1185 465" class="flow-orange"/>
+
+  <rect x="60" y="620" width="1480" height="300" rx="30" fill="#fffaf2" filter="url(#shadow)"/>
+  <rect x="60" y="620" width="16" height="300" rx="8" fill="#7a8a5e"/>
+  <text x="100" y="663" class="lane-title">MIGUEL · AUTOMATIZACIÓN OPERATIVA</text>
+  <text x="100" y="691" class="lane-copy">Infraestructura, Hermes, WhatsApp e integraciones autorizadas mediante Composio</text>
+
+  <g filter="url(#shadow)">
+    <rect x="100" y="730" width="190" height="125" rx="18" fill="#dfe8d0"/>
+    <rect x="335" y="730" width="190" height="125" rx="18" fill="#dfe8d0"/>
+    <rect x="570" y="730" width="190" height="125" rx="18" fill="#dfe8d0"/>
+    <rect x="805" y="730" width="190" height="125" rx="18" fill="#dfe8d0"/>
+    <rect x="1040" y="730" width="190" height="125" rx="18" fill="#dfe8d0"/>
+    <rect x="1275" y="730" width="190" height="125" rx="18" fill="#7a8a5e"/>
+  </g>
+
+  <text x="195" y="768" text-anchor="middle" class="node-title">Hermes en VPS</text>
+  <text x="195" y="795" text-anchor="middle" class="node-copy"><tspan x="195">Docker + Dokploy</tspan><tspan x="195" dy="21">WhatsApp por QR</tspan></text>
+  <text x="430" y="768" text-anchor="middle" class="node-title">Reúne datos</text>
+  <text x="430" y="795" text-anchor="middle" class="node-copy"><tspan x="430">Fechas, personas</tspan><tspan x="430" dy="21">y unidad</tspan></text>
+  <text x="665" y="768" text-anchor="middle" class="node-title">MCP Composio</text>
+  <text x="665" y="795" text-anchor="middle" class="node-copy"><tspan x="665">Conecta servicios</tspan><tspan x="665" dy="21">autorizados</tspan></text>
+  <text x="900" y="768" text-anchor="middle" class="node-title">Calendar</text>
+  <text x="900" y="795" text-anchor="middle" class="node-copy"><tspan x="900">Consulta disponibilidad</tspan><tspan x="900" dy="21">y crea evento</tspan></text>
+  <text x="1135" y="768" text-anchor="middle" class="node-title">Confirmación</text>
+  <text x="1135" y="795" text-anchor="middle" class="node-copy"><tspan x="1135">Sheets + Gmail</tspan><tspan x="1135" dy="21">registro y correo</tspan></text>
+  <text x="1370" y="768" text-anchor="middle" class="node-title-light">Administración</text>
+  <text x="1370" y="795" text-anchor="middle" class="node-copy-light"><tspan x="1370">Valida pago</tspan><tspan x="1370" dy="21">y excepciones</tspan></text>
+
+  <path d="M290 792 H325" class="flow"/>
+  <path d="M525 792 H560" class="flow"/>
+  <path d="M760 792 H795" class="flow"/>
+  <path d="M995 792 H1030" class="flow"/>
+  <path d="M1230 792 H1265" class="flow"/>
+  <path d="M1080 580 V600 H40 V792 H90" class="flow-orange"/>
+
+  <text x="800" y="963" text-anchor="middle" class="small">La landing no se conecta directamente a Calendar ni Sheets · WhatsApp es la frontera entre ambos sistemas</text>
+</svg>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Políticas demostrativas | LIVINN</title>
+  <meta name="description" content="Políticas demostrativas de alojamiento, convivencia y privacidad del proyecto académico LIVINN.">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#f5ead8">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="_ds/organic-5f98556b-10a2-4fb3-8f01-6522f7700a8b/styles.css">
+  <style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;overflow-x:clip}
+    body{margin:0;min-width:0;overflow-x:clip;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)}
+    [id]{scroll-margin-top:96px}
+    a{color:var(--color-accent-700);text-decoration:none}
+    a:hover{color:var(--color-accent)}
+    :where(a):focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}
+    .policy-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--color-bg) 94%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-divider)}
+    .policy-header-inner{max-width:1080px;margin:0 auto;padding:12px clamp(18px,5vw,56px);display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .policy-brand{font-family:var(--font-heading);font-size:24px;letter-spacing:.06em;color:var(--color-text)}
+    .policy-back{min-height:44px;padding:10px 16px;border:1px solid var(--color-divider);border-radius:999px;display:inline-flex;align-items:center;font-size:13px;font-weight:700;color:var(--color-text)}
+    .policy-main{max-width:920px;margin:0 auto;padding:clamp(44px,7vw,76px) clamp(18px,5vw,48px) 72px}
+    .policy-kicker{margin:0 0 10px;color:var(--color-accent-700);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    h1,h2,h3{font-family:var(--font-heading);color:var(--color-text)}
+    h1{margin:0;font-size:clamp(34px,6vw,58px);line-height:1.06;max-width:15ch}
+    .policy-lead{margin:18px 0 0;max-width:64ch;color:color-mix(in srgb,var(--color-text) 72%,transparent);font-size:17px;line-height:1.7}
+    .policy-notice{margin:28px 0;padding:18px 20px;border-left:4px solid var(--color-accent);border-radius:0 var(--radius-md) var(--radius-md) 0;background:var(--color-surface);box-shadow:var(--shadow-sm);font-size:14px;line-height:1.65}
+    .policy-index{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 44px}
+    .policy-index a{min-height:44px;padding:11px 16px;border:1px solid var(--color-divider);border-radius:999px;background:var(--color-surface);display:inline-flex;align-items:center;font-size:13px;font-weight:700}
+    .policy-section{margin-top:36px;padding:clamp(24px,4vw,36px);border:1px solid var(--color-divider);border-radius:var(--radius-lg);background:var(--color-surface);box-shadow:var(--shadow-sm)}
+    .policy-section h2{font-size:clamp(25px,4vw,34px);margin:0 0 22px}
+    .policy-block{padding:20px 0;border-top:1px solid var(--color-divider)}
+    .policy-block:first-of-type{padding-top:0;border-top:0}
+    .policy-block:last-child{padding-bottom:0}
+    .policy-block h3{margin:0 0 8px;font-size:18px}
+    .policy-block p,.policy-block ul{margin:0;color:color-mix(in srgb,var(--color-text) 76%,transparent);font-size:14px;line-height:1.7}
+    .policy-block ul{padding-left:20px}
+    .policy-block li+li{margin-top:5px}
+    .liv-footer{background:var(--color-neutral-900);color:var(--color-neutral-300)}
+    .liv-footer-grid{max-width:1180px;margin:0 auto;padding:36px clamp(16px,5vw,64px) 32px;display:grid;grid-template-columns:minmax(230px,1.2fr) minmax(220px,1fr) minmax(190px,.85fr) minmax(170px,.7fr);gap:clamp(24px,3.5vw,44px);align-items:start}
+    .liv-footer-brand{font-family:var(--font-heading);font-size:25px;letter-spacing:.06em;color:#fff;margin-bottom:9px}
+    .liv-footer-heading{font-family:var(--font-heading);color:#fff;font-size:15px;margin:0 0 10px}
+    .liv-footer-copy{margin:0;font-size:13px;line-height:1.65;color:var(--color-neutral-400);max-width:38ch}
+    .liv-footer-list{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:13px;line-height:1.5}
+    .liv-footer-list a,.liv-footer-policy-link{color:var(--color-accent-300)}
+    .liv-footer-list a:hover,.liv-footer-policy-link:hover{color:#fff}
+    .liv-footer-policy-links{display:grid;gap:4px}
+    .liv-footer-policy-link{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:36px;font-size:13px;line-height:1.35;border-bottom:1px solid rgba(255,255,255,.09)}
+    .liv-footer-policy-link::after{content:'↑';font-size:12px;color:var(--color-neutral-500)}
+    .liv-footer-socials{display:flex;gap:9px}
+    .liv-footer-social{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--color-neutral-400)}
+    .liv-footer-social-note{margin:9px 0 0;font-size:11px;line-height:1.45;color:var(--color-neutral-500)}
+    .liv-footer-bottom{border-top:1px solid rgba(255,255,255,.1)}
+    .liv-footer-bottom-inner{max-width:1180px;margin:0 auto;padding:15px clamp(16px,5vw,64px);font-size:11px;line-height:1.5;color:var(--color-neutral-500);display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap}
+    @media (max-width:1000px){.liv-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media (max-width:520px){
+      .policy-header-inner{padding-inline:14px}
+      .policy-brand{font-size:21px}
+      .policy-back{padding-inline:12px}
+      .policy-main{padding-inline:16px}
+      .policy-section{padding:22px 18px}
+      .liv-footer-grid{padding:28px 18px 24px;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:22px 18px}
+      .liv-footer-intro,.liv-footer-contact{grid-column:1/-1}
+      .liv-footer-policy-link{font-size:12px}
+      .liv-footer-bottom-inner{padding:13px 18px;display:grid;gap:4px}
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="policy-header">
+    <div class="policy-header-inner">
+      <a class="policy-brand" href="index.html" aria-label="Volver al inicio de LIVINN">LIVINN</a>
+      <a class="policy-back" href="index.html">← Volver al sitio</a>
+    </div>
+  </header>
+
+  <main class="policy-main">
+    <p class="policy-kicker">Información para huéspedes</p>
+    <h1>Políticas de LIVINN</h1>
+    <p class="policy-lead">Una guía clara para consultar una estancia, cuidar las cabañas y entender cómo se utilizan los datos enviados durante el contacto.</p>
+
+    <div class="policy-notice" role="note">
+      <strong>Documento demostrativo.</strong> Este contenido forma parte de un proyecto académico, no constituye condiciones contractuales y deberá ser validado por la administración de LIVINN antes de utilizarse en operaciones reales.
+    </div>
+
+    <nav class="policy-index" aria-label="Contenido de las políticas">
+      <a href="#alojamiento">Políticas de alojamiento</a>
+      <a href="#privacidad">Privacidad y datos</a>
+    </nav>
+
+    <section class="policy-section" id="alojamiento" aria-labelledby="titulo-alojamiento">
+      <h2 id="titulo-alojamiento">Políticas de alojamiento</h2>
+
+      <div class="policy-block">
+        <h3>Consultas y confirmación</h3>
+        <ul>
+          <li>El sitio permite preparar una consulta; no confirma disponibilidad ni realiza reservas automáticamente.</li>
+          <li>La unidad, tarifa, fechas, servicios incluidos y condiciones aplicables se confirman directamente por WhatsApp.</li>
+          <li>LIVINN no solicita ni procesa pagos en línea desde este sitio demostrativo.</li>
+        </ul>
+      </div>
+
+      <div class="policy-block">
+        <h3>Llegada y salida</h3>
+        <p>Los horarios de check-in y check-out se coordinan al confirmar la estancia. Cualquier ingreso anticipado o salida posterior queda sujeto a disponibilidad y autorización administrativa.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Capacidad y visitantes</h3>
+        <p>Debe respetarse la capacidad informada para cada unidad. Las visitas externas, reuniones o actividades especiales requieren consulta y autorización previa.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Convivencia y descanso</h3>
+        <ul>
+          <li>Se espera un uso respetuoso de las cabañas, áreas comunes y entorno natural.</li>
+          <li>No se contemplan fiestas ni música a volumen que afecte el descanso de otras personas.</li>
+          <li>Las indicaciones operativas comunicadas por la administración forman parte de la coordinación de la estancia.</li>
+        </ul>
+      </div>
+
+      <div class="policy-block">
+        <h3>Fogatas, humo y seguridad</h3>
+        <ul>
+          <li>Las fogatas sólo pueden realizarse en zonas designadas y cuando las condiciones climáticas y las autoridades lo permitan.</li>
+          <li>El fuego debe permanecer supervisado por una persona adulta y apagarse completamente después de su uso.</li>
+          <li>No se permite fumar dentro de las unidades.</li>
+        </ul>
+      </div>
+
+      <div class="policy-block">
+        <h3>Mascotas</h3>
+        <p>La estancia con mascotas debe informarse antes de confirmar la reserva. Su aceptación, condiciones de cuidado y acceso a espacios comunes quedan sujetas a la unidad y a la validación administrativa.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Cuidado de las instalaciones</h3>
+        <p>Las personas huéspedes deben utilizar responsablemente el mobiliario, equipamiento y espacios comunes, e informar cualquier incidente o daño. Se recomienda no dejar objetos de valor sin supervisión.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Cambios y cancelaciones</h3>
+        <p>Las solicitudes se gestionan por el mismo canal utilizado para confirmar la estancia. Las condiciones específicas de cambio, reprogramación o cancelación deben comunicarse y aceptarse antes de confirmar cada reserva.</p>
+      </div>
+    </section>
+
+    <section class="policy-section" id="privacidad" aria-labelledby="titulo-privacidad">
+      <h2 id="titulo-privacidad">Privacidad y uso de datos</h2>
+
+      <div class="policy-block">
+        <h3>Datos de la consulta</h3>
+        <p>El formulario solicita nombre, unidad de interés, fechas, cantidad de huéspedes y un comentario opcional para preparar el mensaje de consulta.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Uso previsto</h3>
+        <p>La información se utiliza únicamente para responder la consulta, revisar disponibilidad y coordinar una posible estancia. No se contempla la venta de datos ni su utilización para publicidad de terceros.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>WhatsApp y servicios externos</h3>
+        <p>Al elegir enviar la consulta, la comunicación continúa en WhatsApp y queda sujeta a las condiciones y políticas de ese servicio. La ubicación integrada utiliza Google Maps, que también puede aplicar sus propias políticas.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Información sensible y pagos</h3>
+        <p>No deben enviarse contraseñas, datos bancarios ni información de tarjetas mediante el formulario o los comentarios. Este sitio no realiza cobros en línea.</p>
+      </div>
+
+      <div class="policy-block">
+        <h3>Consultas sobre datos</h3>
+        <p>Para solicitar información, corrección o eliminación de datos compartidos durante una conversación, puede escribirse a <a href="mailto:livinnai2026@gmail.com">livinnai2026@gmail.com</a>. La respuesta queda sujeta a la validación y los procedimientos definitivos de la administración.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="liv-footer">
+    <div class="liv-footer-grid">
+      <div class="liv-footer-intro">
+        <div class="liv-footer-brand">LIVINN</div>
+        <p class="liv-footer-copy">Cabañas de madera en Llano Grande, Durango, sobre la Carretera Durango - Mazatlán km 80.</p>
+      </div>
+      <div class="liv-footer-contact">
+        <h3 class="liv-footer-heading">Contacto</h3>
+        <ul class="liv-footer-list">
+          <li><a href="https://wa.me/5216672364294" target="_blank" rel="noopener">WhatsApp: +5216672364294</a></li>
+          <li><a href="mailto:livinnai2026@gmail.com">livinnai2026@gmail.com</a></li>
+          <li style="color:var(--color-neutral-400)">Carretera Durango - Mazatlán km 80, Llano Grande, Dgo.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="liv-footer-heading">Información</h3>
+        <div class="liv-footer-policy-links">
+          <a class="liv-footer-policy-link" href="#alojamiento">Políticas de alojamiento</a>
+          <a class="liv-footer-policy-link" href="#privacidad">Privacidad y datos</a>
+          <a class="liv-footer-policy-link" href="https://github.com/livinnai2026-star/LIVINN-entrega-academica" target="_blank" rel="noopener noreferrer">Código y memoria técnica</a>
+          <a class="liv-footer-policy-link" href="https://mvp-livinn.vercel.app/" target="_blank" rel="noopener noreferrer">Versión publicada</a>
+        </div>
+      </div>
+      <div>
+        <h3 class="liv-footer-heading">Redes</h3>
+        <div class="liv-footer-socials">
+          <span class="liv-footer-social" role="img" aria-label="Instagram — por configurar" title="Instagram — por configurar (demostración)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span>
+          <span class="liv-footer-social" role="img" aria-label="Facebook — por configurar" title="Facebook — por configurar (demostración)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span>
+        </div>
+        <p class="liv-footer-social-note">Perfiles demostrativos,<br>aún sin configurar.</p>
+      </div>
+    </div>
+    <div class="liv-footer-bottom">
+      <div class="liv-footer-bottom-inner">
+        <span>© 2026 LIVINN. Sitio demostrativo — proyecto académico.</span>
+        <span>Disponibilidad sujeta a confirmación. Sin cobros en línea.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
