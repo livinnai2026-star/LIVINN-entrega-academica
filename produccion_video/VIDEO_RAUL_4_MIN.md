@@ -40,11 +40,14 @@ Formato: horizontal 16:9, 1920 × 1080. Esta es una estructura de grabación, no
 - Miguel: VPS, Docker/Dokploy, Hermes, conexión con WhatsApp y automatización mediante Composio con Calendar, Sheets y Gmail.
 - Explicar brevemente cómo se trabajó con asistencia de agentes de IA.
 
-## 3:15–3:45 — Resultado y respaldo
+## 3:15–3:45 — Resultado, respaldo y comunicación
 
 - Mostrar la URL pública actual.
-- Enseñar en GitHub la rama principal, la rama anterior y el tag de respaldo.
+- Entrar desde el footer al repositorio público académico y mostrar su README, memorias y mapa conceptual.
+- Enseñar brevemente en el repositorio de trabajo la rama principal, la rama anterior y el tag de respaldo.
 - Mostrar las dos versiones públicas sin entrar en configuraciones privadas.
+- Explicar que la etapa audiovisual cierra el ciclo del producto: anuncios breves para comunicar el valor al huésped y un caso de estudio para documentar decisiones, arquitectura y trabajo en equipo.
+- Mencionar el método: fuentes técnicas sanitizadas y NotebookLM para el primer relato, Gemini/Flow para recursos publicitarios, OBS para pruebas reales y revisión humana antes de entregar.
 
 ## 3:45–4:00 — Cierre
 
