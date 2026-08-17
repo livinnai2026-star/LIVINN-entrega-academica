@@ -67,10 +67,12 @@ Abrir `http://127.0.0.1:4173/`. Para validar el comportamiento completo no se re
 
 ## Producción audiovisual
 
-El proyecto documenta también su comunicación mediante tres publicidades verticales terminadas y un video explicativo en preparación:
+El proyecto documenta también su comunicación mediante tres publicidades verticales y dos videos explicativos terminados:
 
 - [Escapada](produccion_video/publicidad/finales/livinn_ad_01_escapada_9x16.mp4)
 - [Consulta por WhatsApp](produccion_video/publicidad/finales/livinn_ad_02_consulta_9x16.mp4)
 - [Cuatro refugios](produccion_video/publicidad/finales/livinn_ad_03_refugios_9x16.mp4)
+- [Experiencia web de Iván](produccion_video/notebooklm/salidas/LIVINN_Caso_MVP_Web_Ivan.mp4)
+- [Caso de estudio integral: Iván + Miguel](produccion_video/notebooklm/salidas/LIVINN_Caso_de_Estudio_Integral.mp4)
 
-El Video Overview de la experiencia web de Iván ya está terminado y se conserva en `produccion_video/notebooklm/salidas/`. También están preparadas la fuente, el prompt y cinco capturas sanitizadas para generar un segundo video integral de 3–4 minutos con el trabajo de Iván y Miguel. El cierre conjunto deberá conservar la revisión humana de atribuciones y afirmaciones técnicas.
+El caso de estudio integral utiliza fuentes técnicas y capturas sanitizadas. Su duración final es de 6:22 y conserva la separación de responsabilidades entre la experiencia web, la automatización y la validación administrativa.

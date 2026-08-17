@@ -8,7 +8,12 @@ Esta carpeta reúne una guía breve para producir tres anuncios verticales y un 
 - Un video horizontal de aproximadamente 4 minutos para Raúl.
 - Capturas reutilizables de la web en desktop y móvil.
 
-El primer Video Overview de NotebookLM, dedicado a la experiencia web de Iván, se conserva en `notebooklm/salidas/LIVINN_Caso_MVP_Web_Ivan.mp4`. Para el video integral se prepararon:
+Los Video Overviews terminados se conservan en:
+
+- `notebooklm/salidas/LIVINN_Caso_MVP_Web_Ivan.mp4`: capítulo de la experiencia web, 1:29.
+- `notebooklm/salidas/LIVINN_Caso_de_Estudio_Integral.mp4`: caso completo de Iván y Miguel, 6:22.
+
+Para producir el video integral se prepararon:
 
 - `notebooklm/FUENTE_NOTEBOOKLM_PROYECTO_INTEGRAL.md`.
 - `notebooklm/PROMPT_VIDEO_NOTEBOOKLM_PROYECTO_INTEGRAL.md`.
@@ -59,6 +64,6 @@ Para avanzar rápido, Gemini sirve para generar cada clip. Flow es preferible cu
 
 ## NotebookLM
 
-El Video Overview individual de Iván funciona como capítulo de la experiencia web. Para generar la versión completa se creó un notebook separado con la fuente integral, las dos memorias técnicas, el mapa conceptual final y las cinco capturas sanitizadas de la automatización. Elegir español y solicitar aproximadamente 3 a 4 minutos mediante el prompt integral.
+El Video Overview individual de Iván funciona como capítulo de la experiencia web. Para la versión completa se creó un notebook separado con la fuente integral, las dos memorias técnicas, el mapa conceptual final y las cinco capturas sanitizadas de la automatización.
 
-El resultado de NotebookLM será el primer montaje narrativo. Antes de entregarlo hay que revisar atribuciones, secuencia técnica, datos visibles y cualquier afirmación sobre disponibilidad, confirmación o pago.
+El resultado integral fue revisado como caso de estudio. Antes de reutilizarlo o editarlo hay que conservar las atribuciones, la secuencia técnica, la identificación de las capturas como sanitizadas y los límites sobre disponibilidad, confirmación y pago.
