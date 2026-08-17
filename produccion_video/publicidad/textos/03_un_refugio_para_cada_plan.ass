@@ -1,0 +1,18 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Headline,Georgia,82,&H00D8EAF5,&H00D8EAF5,&H00201E1D,&H80201E1D,-1,0,0,0,100,100,0,0,1,5,2,8,80,80,170,1
+Style: Closing,Georgia,80,&H00D8EAF5,&H00D8EAF5,&H00201E1D,&H80201E1D,-1,0,0,0,100,100,0,0,1,5,2,2,80,80,220,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.30,0:00:02.30,Headline,,0,0,0,,{\fad(220,220)}Cuatro refugios
+Dialogue: 0,0:00:02.45,0:00:05.50,Headline,,0,0,0,,{\fad(220,220)}Para cada forma\Nde viajar
+Dialogue: 0,0:00:05.65,0:00:07.85,Closing,,0,0,0,,{\fad(220,220)}Encuentra el tuyo

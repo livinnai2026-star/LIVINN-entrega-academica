@@ -104,6 +104,7 @@
     .liv-lightbox-mobile-hint{display:block}
   }
   @media (max-width:600px){
+    .liv-hero-image{object-position:47% center!important}
     .liv-header-inner{padding-inline:12px!important;gap:8px!important}
     .liv-brand{font-size:21px!important}
     .liv-brand-mark{width:28px;height:28px}
@@ -163,7 +164,7 @@
 
   <section id="inicio" style="position:relative;min-height:clamp(540px,80vh,760px);display:flex;align-items:flex-end">
     <figure data-image-id="hero-livinn" data-image-role="portada" data-image-ratio="16:9" data-image-status="final" style="margin:0;position:absolute;inset:0;overflow:hidden;background:var(--color-neutral-300)">
-      <img src="img/hero/hero-livinn.webp" srcset="img/responsive/hero-livinn-640.webp 640w, img/responsive/hero-livinn-960.webp 960w, img/hero/hero-livinn.webp 1672w" sizes="100vw" width="1672" height="941" alt="Cabaña LIVINN iluminada entre pinos nevados al atardecer" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:68% center">
+      <img class="liv-hero-image" src="img/hero/hero-livinn-aereo.webp" srcset="img/responsive/hero-livinn-aereo-640.webp 640w, img/responsive/hero-livinn-aereo-960.webp 960w, img/hero/hero-livinn-aereo.webp 1672w" sizes="100vw" width="1672" height="940" alt="Cabaña LIVINN iluminada en una vista amplia del bosque al atardecer" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:68% center">
     </figure>
     <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,27,24,.78) 0%,rgba(28,27,24,.38) 54%,rgba(28,27,24,.08) 78%),linear-gradient(180deg,rgba(46,43,37,.18) 0%,rgba(46,43,37,.22) 45%,rgba(46,43,37,.70) 100%);pointer-events:none"></div>
     <div style="position:relative;width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,64px) clamp(48px,8vw,84px)">

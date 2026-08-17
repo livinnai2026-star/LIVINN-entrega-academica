@@ -29,10 +29,10 @@ El asistente complementa la web de LIVINN. La landing no accede directamente a G
 3. El agente consulta Google Calendar para verificar disponibilidad.
 4. Presenta una cotización y un resumen de los datos reunidos.
 5. El huésped confirma expresamente la información.
-6. El agente crea el evento en Calendar, registra la operación en Google Sheets y envía una confirmación mediante Gmail.
+6. El agente registra primero la reserva en Google Sheets, crea después el evento en Calendar y envía una confirmación mediante Gmail.
 7. El pago y cualquier condición administrativa quedan pendientes de verificación humana.
 
-Google Calendar funciona como referencia operativa de disponibilidad. Google Sheets conserva el registro estructurado de la reserva y Gmail comunica la confirmación. La memoria aportada no documenta un bloqueo transaccional o atómico contra concurrencia; por ello, no debe afirmarse públicamente que el sistema elimina por completo el riesgo de solicitudes simultáneas.
+Google Calendar funciona como referencia operativa de disponibilidad. Tras la confirmación explícita, Google Sheets recibe primero el registro estructurado de la reserva; después se crea el evento en Calendar y Gmail comunica la confirmación. La memoria aportada no documenta un bloqueo transaccional o atómico contra concurrencia; por ello, no debe afirmarse públicamente que el sistema elimina por completo el riesgo de solicitudes simultáneas.
 
 ## Datos de la reserva
 
@@ -80,4 +80,3 @@ La ubicación comunicada por el proyecto es Carretera Durango–Mazatlán km 80,
 ## Aporte de Miguel
 
 Miguel diseñó y desplegó la capa operativa: infraestructura en VPS, contenedor del agente, conexión de WhatsApp, configuración de Hermes, integración MCP mediante Composio y flujo con Calendar, Sheets y Gmail. También definió las reglas de privacidad, escalamiento y verificación administrativa del asistente.
-

@@ -40,6 +40,8 @@ Audio sugerido: tres cortes musicales breves y cierre limpio con LIVINN.
 
 ## Exportaciones
 
-- `livinn_ad_01_escapada_9x16.mp4`
-- `livinn_ad_02_consulta_9x16.mp4`
-- `livinn_ad_03_refugios_9x16.mp4`
+- `publicidad/finales/livinn_ad_01_escapada_9x16.mp4`
+- `publicidad/finales/livinn_ad_02_consulta_9x16.mp4`
+- `publicidad/finales/livinn_ad_03_refugios_9x16.mp4`
+
+Los originales sin modificar, los textos ASS y el proceso de exportación reproducible se conservan en `publicidad/`. El audio original se mantiene, se normaliza y recibe fundidos breves; no se agregó música externa.

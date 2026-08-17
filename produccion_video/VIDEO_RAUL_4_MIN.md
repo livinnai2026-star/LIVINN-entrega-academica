@@ -28,7 +28,7 @@ Formato: horizontal 16:9, 1920 × 1080. Esta es una estructura de grabación, no
 - El código y el historial de versiones se conservan en GitHub; Vercel publica automáticamente la versión principal y permite mantener un respaldo online.
 - En un VPS, Miguel desplegó Hermes dentro de un contenedor Docker administrado con Dokploy y lo conectó con WhatsApp mediante QR.
 - Hermes reúne los datos y utiliza un MCP remoto de Composio para trabajar con las aplicaciones autorizadas de Google.
-- Flujo confirmado: recibir la consulta → pedir fechas, personas y unidad → consultar disponibilidad en Calendar → presentar cotización y resumen → esperar confirmación explícita → crear el evento → registrar en Sheets → enviar confirmación por Gmail.
+- Flujo confirmado: recibir la consulta → pedir fechas, personas y unidad → consultar disponibilidad en Calendar → presentar cotización y resumen → esperar confirmación explícita → registrar primero la reserva en Sheets → crear el evento en Calendar → enviar confirmación por Gmail.
 - El pago queda pendiente de verificación administrativa y los casos excepcionales se escalan a una persona.
 - Aclarar expresamente que Google Sheets y Google Calendar no están conectados directamente a la landing: pertenecen a la automatización posterior de WhatsApp.
 - Mostrar estas automatizaciones sólo si están activas, verificadas y se pueden demostrar sin exponer datos privados.

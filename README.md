@@ -12,7 +12,7 @@ LIVINN es un MVP académico para un complejo de cabañas en Llano Grande, Durang
 - Permite elegir unidad, fechas, huéspedes y comentario.
 - Prepara un mensaje estructurado y abre la consulta en WhatsApp.
 - El asistente reúne los datos y consulta disponibilidad mediante Google Calendar.
-- Después de la confirmación explícita, registra la operación en Calendar y Sheets y envía una confirmación por Gmail.
+- Después de la confirmación explícita, registra primero la reserva en Sheets, crea el evento en Calendar y envía una confirmación por Gmail.
 - Los pagos y casos excepcionales permanecen bajo validación humana.
 
 ## Arquitectura
@@ -24,7 +24,7 @@ Consulta estructurada por WhatsApp
         ↓
 Hermes en VPS + MCP de Composio
         ↓
-Calendar · Sheets · Gmail
+Calendar (consulta) · Sheets (registro) · Calendar (evento) · Gmail
         ↓
 Validación administrativa
 ```
@@ -67,4 +67,10 @@ Abrir `http://127.0.0.1:4173/`. Para validar el comportamiento completo no se re
 
 ## Producción audiovisual
 
-El proyecto documenta también su comunicación: tres publicidades verticales de 7–8 segundos y un video explicativo de aproximadamente cuatro minutos. Las memorias sanitizadas y mapas conceptuales están preparados para generar un primer montaje en NotebookLM y luego verificarlo contra demostraciones reales grabadas con OBS.
+El proyecto documenta también su comunicación mediante tres publicidades verticales terminadas y un video explicativo en preparación:
+
+- [Escapada](produccion_video/publicidad/finales/livinn_ad_01_escapada_9x16.mp4)
+- [Consulta por WhatsApp](produccion_video/publicidad/finales/livinn_ad_02_consulta_9x16.mp4)
+- [Cuatro refugios](produccion_video/publicidad/finales/livinn_ad_03_refugios_9x16.mp4)
+
+Las memorias sanitizadas, mapas conceptuales y fuentes específicas de Iván están preparados para NotebookLM. Los videos generados funcionan como material explicativo intermedio; el cierre conjunto de 3–4 minutos deberá incorporar evidencia real de la web y revisión humana.

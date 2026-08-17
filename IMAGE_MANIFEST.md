@@ -8,7 +8,7 @@ Los 23 espacios visuales están integrados con rutas relativas, textos alternati
 
 | image_id | unidad / sección | rol | ruta definitiva | alt definitivo | ubicación | reutilización | estado |
 |---|---|---|---|---|---|---|---|
-| `hero-livinn` | Portada | portada | `img/hero/hero-livinn.webp` | Cabaña LIVINN iluminada entre pinos nevados al atardecer | Hero | Fuente única | FINAL_INTEGRADO |
+| `hero-livinn` | Portada | portada | `img/hero/hero-livinn-aereo.webp` | Cabaña LIVINN iluminada en una vista amplia del bosque al atardecer | Hero | Fuente única | FINAL_INTEGRADO |
 | `arrayan-exterior` | Arrayán | exterior | `img/unidades/arrayan/exterior.webp` | Cabaña Arrayán de madera entre pinos nevados | Tarjeta + modal | Mismo archivo en ambas vistas | FINAL_INTEGRADO |
 | `arrayan-dormitorio` | Arrayán | dormitorio | `img/unidades/arrayan/dormitorio.webp` | Dormitorio cálido de la Cabaña Arrayán con chimenea | Modal | Reutilizado por `galeria-interior` | FINAL_INTEGRADO |
 | `arrayan-cocina` | Arrayán | cocina | `img/unidades/arrayan/cocina.webp` | Kitchenette de madera equipada de la Cabaña Arrayán | Modal | No | FINAL_INTEGRADO |

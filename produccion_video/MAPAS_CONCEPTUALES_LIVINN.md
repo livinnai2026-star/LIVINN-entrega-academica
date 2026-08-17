@@ -28,8 +28,8 @@ flowchart LR
     D --> E[Consulta Google Calendar]
     E --> F[Presenta cotización y resumen]
     F --> G{Confirmación explícita del huésped}
-    G -->|Sí| H[Crear evento en Calendar]
-    H --> I[Registrar en Google Sheets]
+    G -->|Sí| H[Registrar reserva en Google Sheets]
+    H --> I[Crear evento en Calendar]
     I --> J[Enviar confirmación por Gmail]
     J --> K[Pago pendiente de validación administrativa]
     G -->|No o datos incompletos| C
@@ -52,15 +52,14 @@ flowchart LR
     subgraph AGENTE[Automatización]
         E --> F[Hermes en VPS]
         F --> G[MCP de Composio]
-        G --> H[Calendar: disponibilidad y evento]
-        G --> I[Sheets: registro]
-        G --> J[Gmail: confirmación]
+        G --> H[Calendar: consulta de disponibilidad]
+        H --> I[Sheets: registro de reserva]
+        I --> J[Calendar: creación del evento]
+        J --> K[Gmail: confirmación]
     end
 
     subgraph CONTROL[Control humano]
-        H --> K[Validación administrativa]
-        I --> K
-        J --> K
+        K --> M[Validación administrativa]
     end
 
     L[GitHub: código, documentación y respaldos] --> A
@@ -74,4 +73,3 @@ flowchart LR
 - Calendar se consulta para disponibilidad y almacena el evento.
 - Sheets registra la operación y Gmail envía la confirmación.
 - La administración verifica pagos y atiende excepciones.
-

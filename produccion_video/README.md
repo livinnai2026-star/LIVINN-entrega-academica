@@ -8,6 +8,12 @@ Esta carpeta reúne una guía breve para producir tres anuncios verticales y un 
 - Un video horizontal de aproximadamente 4 minutos para Raúl.
 - Capturas reutilizables de la web en desktop y móvil.
 
+Las publicidades recibidas, sus textos editables y las exportaciones finales están organizadas en `publicidad/`. Las versiones finales son:
+
+- `publicidad/finales/livinn_ad_01_escapada_9x16.mp4`
+- `publicidad/finales/livinn_ad_02_consulta_9x16.mp4`
+- `publicidad/finales/livinn_ad_03_refugios_9x16.mp4`
+
 ## Fuentes de verdad
 
 - Sitio actual: https://mvp-livinn.vercel.app/

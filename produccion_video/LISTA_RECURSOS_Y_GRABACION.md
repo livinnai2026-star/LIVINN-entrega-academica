@@ -32,7 +32,7 @@ Cada clip puede durar entre 4 y 8 segundos. Conviene grabar movimientos lentos y
 
 ## Recursos por confirmar
 
-- Logotipo final, si existe uno distinto del texto LIVINN.
+- Identidad visual confirmada: símbolo del bot conservado y variante cromática integrada en la web.
 - Música con permiso de uso.
 - Voz: Iván, Miguel o voz generada.
 - Grabaciones reales del complejo, si están disponibles.
