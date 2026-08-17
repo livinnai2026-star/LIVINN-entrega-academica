@@ -21,7 +21,7 @@
     .policy-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--color-bg) 94%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-divider)}
     .policy-header-inner{max-width:1080px;margin:0 auto;padding:12px clamp(18px,5vw,56px);display:flex;align-items:center;justify-content:space-between;gap:18px}
     .policy-brand{font-family:var(--font-heading);font-size:24px;letter-spacing:.06em;color:var(--color-text);display:inline-flex;align-items:center;gap:8px}
-    .policy-brand-mark{width:32px;height:32px;object-fit:contain;flex:none}
+    .policy-brand-mark{width:32px;height:32px;display:block;flex:none;background:linear-gradient(135deg,var(--color-text) 0 62%,var(--color-accent) 62% 100%);-webkit-mask:url('img/brand/livinn-icon.png') center/contain no-repeat;mask:url('img/brand/livinn-icon.png') center/contain no-repeat}
     .policy-back{min-height:44px;padding:10px 16px;border:1px solid var(--color-divider);border-radius:999px;display:inline-flex;align-items:center;font-size:13px;font-weight:700;color:var(--color-text)}
     .policy-main{max-width:920px;margin:0 auto;padding:clamp(44px,7vw,76px) clamp(18px,5vw,48px) 72px}
     .policy-kicker{margin:0 0 10px;color:var(--color-accent-700);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
@@ -43,7 +43,7 @@
     .liv-footer{background:var(--color-neutral-900);color:var(--color-neutral-300)}
     .liv-footer-grid{max-width:1180px;margin:0 auto;padding:36px clamp(16px,5vw,64px) 32px;display:grid;grid-template-columns:minmax(230px,1.2fr) minmax(220px,1fr) minmax(190px,.85fr) minmax(170px,.7fr);gap:clamp(24px,3.5vw,44px);align-items:start}
     .liv-footer-brand{font-family:var(--font-heading);font-size:25px;letter-spacing:.06em;color:#fff;margin-bottom:9px;display:flex;align-items:center;gap:9px}
-    .liv-footer-brand-mark{width:34px;height:34px;object-fit:contain;flex:none}
+    .liv-footer-brand-mark{width:34px;height:34px;display:block;flex:none;background:linear-gradient(135deg,var(--color-bg) 0 62%,var(--color-accent) 62% 100%);-webkit-mask:url('img/brand/livinn-icon.png') center/contain no-repeat;mask:url('img/brand/livinn-icon.png') center/contain no-repeat}
     .liv-footer-heading{font-family:var(--font-heading);color:#fff;font-size:15px;margin:0 0 10px}
     .liv-footer-copy{margin:0;font-size:13px;line-height:1.65;color:var(--color-neutral-400);max-width:38ch}
     .liv-footer-list{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:13px;line-height:1.5}
@@ -76,7 +76,7 @@
 <body>
   <header class="policy-header">
     <div class="policy-header-inner">
-      <a class="policy-brand" href="index.html" aria-label="Volver al inicio de LIVINN"><img class="policy-brand-mark" src="img/icon-192.png" width="32" height="32" alt="" aria-hidden="true"><span>LIVINN</span></a>
+      <a class="policy-brand" href="index.html" aria-label="Volver al inicio de LIVINN"><span class="policy-brand-mark" aria-hidden="true"></span><span>LIVINN</span></a>
       <a class="policy-back" href="index.html">← Volver al sitio</a>
     </div>
   </header>
@@ -185,7 +185,7 @@
   <footer class="liv-footer">
     <div class="liv-footer-grid">
       <div class="liv-footer-intro">
-        <div class="liv-footer-brand"><img class="liv-footer-brand-mark" src="img/icon-192.png" width="34" height="34" alt="" aria-hidden="true"><span>LIVINN</span></div>
+        <div class="liv-footer-brand"><span class="liv-footer-brand-mark" aria-hidden="true"></span><span>LIVINN</span></div>
         <p class="liv-footer-copy">Cabañas de madera en Llano Grande, Durango, sobre la Carretera Durango - Mazatlán km 80.</p>
       </div>
       <div class="liv-footer-contact">

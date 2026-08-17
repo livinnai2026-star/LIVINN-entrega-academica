@@ -33,7 +33,7 @@
   :where(a,button,input,select,textarea):focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}
   button{touch-action:manipulation}
   .liv-brand{display:inline-flex;align-items:center;gap:8px}
-  .liv-brand-mark{width:32px;height:32px;object-fit:contain;flex:none}
+  .liv-brand-mark{width:32px;height:32px;display:block;flex:none;background:linear-gradient(135deg,var(--color-text) 0 62%,var(--color-accent) 62% 100%);-webkit-mask:url('img/brand/livinn-icon.png') center/contain no-repeat;mask:url('img/brand/livinn-icon.png') center/contain no-repeat}
   .liv-nav-link{color:var(--color-text);font-size:14px;font-weight:600;padding:4px 0;border-bottom:2px solid transparent}
   .liv-nav-link:hover{color:var(--color-accent)}
   .liv-nav-link[aria-current="page"]{color:var(--color-accent);border-bottom-color:var(--color-accent)}
@@ -74,7 +74,7 @@
   .liv-footer{background:var(--color-neutral-900);color:var(--color-neutral-300);margin-top:clamp(56px,9vw,104px)}
   .liv-footer-grid{max-width:1180px;margin:0 auto;padding:36px clamp(16px,5vw,64px) 32px;display:grid;grid-template-columns:minmax(230px,1.2fr) minmax(220px,1fr) minmax(190px,.85fr) minmax(170px,.7fr);gap:clamp(24px,3.5vw,44px);align-items:start}
   .liv-footer-brand{font-family:var(--font-heading);font-size:25px;letter-spacing:.06em;color:#fff;margin-bottom:9px;display:flex;align-items:center;gap:9px}
-  .liv-footer-brand-mark{width:34px;height:34px;object-fit:contain;flex:none}
+  .liv-footer-brand-mark{width:34px;height:34px;display:block;flex:none;background:linear-gradient(135deg,var(--color-bg) 0 62%,var(--color-accent) 62% 100%);-webkit-mask:url('img/brand/livinn-icon.png') center/contain no-repeat;mask:url('img/brand/livinn-icon.png') center/contain no-repeat}
   .liv-footer-heading{font-family:var(--font-heading);color:#fff;font-size:15px;margin:0 0 10px}
   .liv-footer-copy{margin:0;font-size:13px;line-height:1.65;color:var(--color-neutral-400);max-width:38ch}
   .liv-footer-list{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:13px;line-height:1.5}
@@ -137,7 +137,7 @@
 
   <header style="position:sticky;top:0;z-index:60;background:color-mix(in srgb, var(--color-bg) 92%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-divider)">
     <div class="liv-header-inner" style="max-width:1180px;margin:0 auto;padding:12px clamp(16px,5vw,64px);display:flex;align-items:center;gap:16px">
-      <a class="liv-brand" href="#inicio" onClick="{{ goInicio }}" style="font-family:var(--font-heading);font-size:24px;letter-spacing:.06em;color:var(--color-text);margin-right:auto"><img class="liv-brand-mark" src="img/icon-192.png" width="32" height="32" alt="" aria-hidden="true"><span>{{ brand }}</span></a>
+      <a class="liv-brand" href="#inicio" onClick="{{ goInicio }}" style="font-family:var(--font-heading);font-size:24px;letter-spacing:.06em;color:var(--color-text);margin-right:auto"><span class="liv-brand-mark" aria-hidden="true"></span><span>{{ brand }}</span></a>
       <nav class="liv-desktop-nav" aria-label="Navegación principal">
         <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="6">
           <a class="liv-nav-link" data-navlink href="{{ link.href }}" onClick="{{ link.go }}">{{ link.label }}</a>
@@ -375,7 +375,7 @@
   <footer class="liv-footer">
     <div class="liv-footer-grid">
       <div class="liv-footer-intro">
-        <div class="liv-footer-brand"><img class="liv-footer-brand-mark" src="img/icon-192.png" width="34" height="34" alt="" aria-hidden="true"><span>{{ brand }}</span></div>
+        <div class="liv-footer-brand"><span class="liv-footer-brand-mark" aria-hidden="true"></span><span>{{ brand }}</span></div>
         <p class="liv-footer-copy">Cabañas de madera en Llano Grande, Durango, sobre la Carretera Durango - Mazatlán km 80.</p>
       </div>
       <div class="liv-footer-contact">
