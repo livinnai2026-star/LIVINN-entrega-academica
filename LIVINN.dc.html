@@ -54,7 +54,7 @@
   .liv-modal-body{padding:24px clamp(22px,3vw,34px) clamp(22px,3vw,34px)}
   .liv-lightbox-shell{display:grid;gap:10px;justify-items:center;max-width:94vw}
   .liv-lightbox-backdrop{background:rgba(20,18,17,.94)}
-  .liv-lightbox-stage{width:min(92vw,1200px);height:min(78vh,780px);overflow:hidden;display:grid;place-items:center;overscroll-behavior:contain;touch-action:pan-y pinch-zoom;border-radius:var(--radius-md)}
+  .liv-lightbox-stage{width:min(92vw,1200px);height:min(78vh,780px);overflow:hidden;display:grid;place-items:center;overscroll-behavior:contain;touch-action:pinch-zoom;-webkit-touch-callout:none;border-radius:var(--radius-md)}
   .liv-lightbox-stage.is-zoomed{display:block;overflow:auto;background:rgba(0,0,0,.18);touch-action:pan-x pan-y pinch-zoom}
   .liv-lightbox-image{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border-radius:var(--radius-md);box-shadow:var(--shadow-lg);cursor:zoom-in;user-select:none;-webkit-user-drag:none}
   .liv-lightbox-image.is-zoomed{max-width:none;max-height:none;width:200%;height:auto;cursor:zoom-out;border-radius:0}
@@ -64,6 +64,7 @@
   .liv-lightbox-controls{position:fixed;top:max(18px,env(safe-area-inset-top));right:18px;z-index:2;display:flex;gap:8px}
   .liv-lightbox-control,.liv-lightbox-arrow{width:46px;height:46px;background:rgba(255,255,255,.94);color:var(--color-text);box-shadow:var(--shadow-md)}
   .liv-lightbox-arrow{position:fixed;top:50%;z-index:2;transform:translateY(-50%)}
+  .liv-lightbox-backdrop.is-zoomed .liv-lightbox-arrow{opacity:0;visibility:hidden;pointer-events:none}
   .liv-lightbox-prev{left:16px}
   .liv-lightbox-next{right:16px}
   .liv-footer{background:var(--color-neutral-900);color:var(--color-neutral-300);margin-top:clamp(56px,9vw,104px)}
@@ -90,7 +91,10 @@
     .liv-desktop-nav,.liv-hamburger,.liv-mobile-menu{display:none!important}
     .liv-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:80;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));min-height:64px;padding:0 max(4px,env(safe-area-inset-left)) env(safe-area-inset-bottom) max(4px,env(safe-area-inset-right));background:color-mix(in srgb,var(--color-surface) 96%,transparent);border-top:1px solid var(--color-divider);box-shadow:0 -8px 24px rgba(28,27,24,.12);backdrop-filter:blur(14px)}
     .liv-lightbox-backdrop{background:rgba(13,12,11,.975)}
-    .liv-lightbox-arrow{display:none!important}
+    .liv-lightbox-arrow{display:inline-flex!important;width:44px;height:44px;background:rgba(255,255,255,.8);border-color:rgba(255,255,255,.68);box-shadow:0 5px 18px rgba(0,0,0,.28);opacity:.86;backdrop-filter:blur(8px)}
+    .liv-lightbox-arrow:active{transform:translateY(-50%) scale(.94)}
+    .liv-lightbox-prev{left:max(5px,env(safe-area-inset-left))}
+    .liv-lightbox-next{right:max(5px,env(safe-area-inset-right))}
     .liv-lightbox-caption{padding-inline:12px}
     .liv-lightbox-mobile-hint{display:block}
   }
@@ -382,7 +386,6 @@
           <a class="liv-footer-policy-link" href="politicas.html#alojamiento" target="_blank" rel="noopener">Políticas de alojamiento</a>
           <a class="liv-footer-policy-link" href="politicas.html#privacidad" target="_blank" rel="noopener">Privacidad y datos</a>
           <a class="liv-footer-policy-link" href="https://github.com/livinnai2026-star/LIVINN-entrega-academica" target="_blank" rel="noopener noreferrer">Código y memoria técnica</a>
-          <a class="liv-footer-policy-link" href="https://mvp-livinn.vercel.app/" target="_blank" rel="noopener noreferrer">Versión publicada</a>
         </div>
       </div>
       <div>
@@ -477,9 +480,9 @@
   </sc-if>
 
   <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
-    <div role="dialog" aria-modal="true" aria-labelledby="liv-lightbox-caption" aria-describedby="liv-lightbox-help" tabindex="-1" ref="{{ lbDialogRef }}" class="liv-lightbox-backdrop" data-liv-anim style="position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:clamp(12px,3vw,24px);animation:livFade .18s ease" onClick="{{ closeLightbox }}">
+    <div role="dialog" aria-modal="true" aria-labelledby="liv-lightbox-caption" aria-describedby="liv-lightbox-help" tabindex="-1" ref="{{ lbDialogRef }}" class="{{ lightbox.backdropClass }}" data-liv-anim style="position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:clamp(12px,3vw,24px);animation:livFade .18s ease" onClick="{{ closeLightbox }}">
       <div class="liv-lightbox-shell" onClick="{{ stop }}">
-        <div class="{{ lightbox.stageClass }}" onPointerDown="{{ lightboxPointerStart }}" onPointerUp="{{ lightboxPointerEnd }}">
+        <div class="{{ lightbox.stageClass }}" onPointerDown="{{ lightboxPointerStart }}" onPointerUp="{{ lightboxPointerEnd }}" onPointerCancel="{{ lightboxPointerCancel }}">
           <img ref="{{ lbImageRef }}" class="{{ lightbox.imageClass }}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" data-liv-src="{{ lightbox.src }}" alt="{{ lightbox.alt }}" width="{{ lightbox.width }}" height="{{ lightbox.height }}" decoding="async" draggable="false">
         </div>
         <p class="liv-lightbox-mobile-hint" aria-hidden="true">{{ lightbox.mobileHint }}</p>
@@ -640,6 +643,7 @@ class Component extends DCLogic {
 
   _lightboxStep(delta) {
     this._lbLastTapAt = 0;
+    this._resetLightboxPointer();
     this.setState((s) => {
       if (!s.lightbox || !s.lightbox.items.length) return {};
       const total = s.lightbox.items.length;
@@ -659,24 +663,44 @@ class Component extends DCLogic {
   _closeLightbox(e) {
     if (e) e.stopPropagation();
     this._lbLastTapAt = 0;
+    this._resetLightboxPointer();
     this.setState({ lightbox: null });
   }
 
   _lightboxPointerStart(e) {
     if (e.pointerType === 'mouse' && e.button !== 0) return;
+    if (this._lbPointerId != null && this._lbPointerId !== e.pointerId) return;
+    this._lbPointerId = e.pointerId;
     this._lbTouchX = e.clientX;
     this._lbTouchY = e.clientY;
     this._lbTouchStartedAt = Date.now();
+    if (e.currentTarget && e.currentTarget.setPointerCapture) {
+      try { e.currentTarget.setPointerCapture(e.pointerId); } catch (_) {}
+    }
+  }
+
+  _resetLightboxPointer(e) {
+    if (e && e.currentTarget && e.currentTarget.releasePointerCapture && this._lbPointerId != null) {
+      try { e.currentTarget.releasePointerCapture(this._lbPointerId); } catch (_) {}
+    }
+    this._lbPointerId = null;
+    this._lbTouchX = null;
+    this._lbTouchY = null;
+    this._lbTouchStartedAt = null;
+  }
+
+  _lightboxPointerCancel(e) {
+    if (this._lbPointerId != null && e.pointerId !== this._lbPointerId) return;
+    this._resetLightboxPointer(e);
   }
 
   _lightboxPointerEnd(e) {
     if (this._lbTouchX == null) return;
+    if (this._lbPointerId != null && e.pointerId !== this._lbPointerId) return;
     const dx = e.clientX - this._lbTouchX;
     const dy = e.clientY - this._lbTouchY;
     const elapsed = Date.now() - (this._lbTouchStartedAt || Date.now());
-    this._lbTouchX = null;
-    this._lbTouchY = null;
-    this._lbTouchStartedAt = null;
+    this._resetLightboxPointer(e);
     if (Math.abs(dx) < 14 && Math.abs(dy) < 14 && elapsed < 340) {
       const now = Date.now();
       if (this._lbLastTapAt && now - this._lbLastTapAt < 380) {
@@ -687,7 +711,7 @@ class Component extends DCLogic {
       this._lbLastTapAt = now;
     }
     if (this.state.lightbox && this.state.lightbox.zoom) return;
-    if (Math.abs(dx) >= 54 && Math.abs(dx) > Math.abs(dy) * 1.15) this._lightboxStep(dx < 0 ? 1 : -1);
+    if (Math.abs(dx) >= 36 && Math.abs(dx) >= Math.abs(dy) * .85) this._lightboxStep(dx < 0 ? 1 : -1);
   }
 
   _keyActivate(e, action) {
@@ -998,10 +1022,11 @@ class Component extends DCLogic {
     const lightbox = {
       ...lbCurrent,
       counter: lbItems.length ? (lbIndex + 1) + ' / ' + lbItems.length : '',
+      backdropClass: 'liv-lightbox-backdrop' + (lbState && lbState.zoom ? ' is-zoomed' : ''),
       stageClass: 'liv-lightbox-stage' + (lbState && lbState.zoom ? ' is-zoomed' : ''),
       imageClass: 'liv-lightbox-image' + (lbState && lbState.zoom ? ' is-zoomed' : ''),
       zoomLabel: lbState && lbState.zoom ? 'Reducir imagen' : 'Ampliar imagen',
-      mobileHint: lbState && lbState.zoom ? 'Arrastrá para recorrer · Doble toque para reducir' : 'Deslizá para ver más · Doble toque para ampliar',
+      mobileHint: lbState && lbState.zoom ? 'Arrastrá para recorrer · Doble toque para reducir' : 'Deslizá o usá las flechas · Doble toque para ampliar',
     };
 
     const faqData = [
@@ -1061,6 +1086,7 @@ class Component extends DCLogic {
       toggleLightboxZoom: (e) => { if (e) e.stopPropagation(); this._toggleLightboxZoom(); },
       lightboxPointerStart: (e) => this._lightboxPointerStart(e),
       lightboxPointerEnd: (e) => this._lightboxPointerEnd(e),
+      lightboxPointerCancel: (e) => this._lightboxPointerCancel(e),
       lbDialogRef: (el) => { this._lbDialog = el; },
       lbImageRef: (el) => { this._lbImage = el; },
       lbCloseRef: (el) => { this._lbClose = el; },

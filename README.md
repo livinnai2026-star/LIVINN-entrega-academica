@@ -2,7 +2,7 @@
 
 [Ver sitio publicado](https://mvp-livinn.vercel.app/) · [Ver versión anterior](https://mvp-livinn-anterior.vercel.app/)
 
-![Mapa de presentación de LIVINN](produccion_video/mapa_presentacion_livinn_v2.png)
+![Mapa de presentación de LIVINN](produccion_video/mapa_presentacion_livinn_final.jpg)
 
 LIVINN es un MVP académico para un complejo de cabañas en Llano Grande, Durango. El proyecto conecta una experiencia web responsive con un asistente operativo de WhatsApp, manteniendo separadas la comunicación pública, la automatización y la validación administrativa.
 

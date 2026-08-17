@@ -21,8 +21,8 @@ Esta carpeta reúne una guía breve para producir tres anuncios verticales y un 
 - Mapas sanitizados: `MAPAS_CONCEPTUALES_LIVINN.md`.
 - Mapa visual para NotebookLM: `mapa_conceptual_livinn_sanitizado.png`.
 - Fuente editable del mapa: `mapa_conceptual_livinn_sanitizado.svg`.
-- Mapa visual de presentación: `mapa_presentacion_livinn_v2.png`.
-- Fuente editable de presentación: `mapa_presentacion_livinn_v2.svg`.
+- Mapa visual final de presentación: `mapa_presentacion_livinn_final.jpg`.
+- Versión editable anterior conservada como respaldo: `mapa_presentacion_livinn_v2.svg`.
 
 ## Criterios
 
