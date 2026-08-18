@@ -40,6 +40,7 @@
   .liv-desktop-nav{display:flex;gap:22px;align-items:center}
   .liv-hamburger{display:none}
   .liv-mobile-menu{display:none}
+  .liv-header-cta-mobile{display:none}
   .liv-bottom-nav{display:none}
   .liv-bottom-link{color:var(--color-text);font-size:11px;font-weight:700;line-height:1;min-width:0;min-height:56px;padding:5px 2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-top:3px solid transparent}
   .liv-bottom-link:hover{color:var(--color-accent)}
@@ -50,6 +51,22 @@
   .liv-short-label{display:none}
   .liv-mobile-copy{display:none}
   .liv-wa-icon{flex:none}
+  .liv-unit-card{position:relative;cursor:pointer}
+  .liv-unit-card-trigger{position:absolute;inset:0;z-index:2;width:100%;height:100%;border:0;border-radius:inherit;background:transparent;cursor:pointer}
+  .liv-unit-card-trigger:focus-visible{outline:3px solid var(--color-accent);outline-offset:4px}
+  .liv-unit-card:has(.liv-unit-card-trigger:hover){transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .liv-unit-card:has(.liv-unit-card-trigger:focus-visible){box-shadow:var(--shadow-lg)}
+  .liv-card-review-summary{pointer-events:none;display:grid;justify-items:end;gap:3px;line-height:1}
+  .liv-card-rating-line{display:flex;align-items:center;gap:6px;color:var(--color-accent-700)}
+  .liv-card-stars{font-size:13px;letter-spacing:1px;color:var(--color-accent)}
+  .liv-card-score{font-family:var(--font-body);font-size:14px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--color-text)}
+  .liv-card-details{font-size:11px;font-weight:700;color:var(--color-accent-700);text-decoration:underline;text-underline-offset:3px}
+  .liv-rating-card{margin-top:16px;padding-top:14px;border-top:1px solid var(--color-divider);display:flex;align-items:center;justify-content:space-between;gap:4px 18px;flex-wrap:wrap}
+  .liv-rating-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .liv-rating-score{font-family:var(--font-body);font-size:17px;font-weight:800;font-variant-numeric:tabular-nums}
+  .liv-stars{--rating-percent:100%;position:relative;display:inline-block;font-size:21px;line-height:1;letter-spacing:2px;color:var(--color-neutral-400)}
+  .liv-stars::before{content:'★★★★★';position:absolute;inset:0 auto 0 0;width:var(--rating-percent);overflow:hidden;white-space:nowrap;color:var(--color-accent);text-shadow:0 1px 0 rgba(0,0,0,.06)}
+  .liv-rating-link{position:relative;z-index:3;display:inline-flex;align-items:center;min-height:44px;color:var(--color-accent-700);font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
   .liv-image-button{border:0;padding:0;margin:0;font:inherit;cursor:zoom-in;position:relative;overflow:hidden;background:var(--color-neutral-200);display:block;width:100%;min-height:44px}
   .liv-image-button img{width:100%;height:100%;object-fit:cover;transition:transform .2s ease}
   .liv-image-button:hover img{transform:scale(1.025)}
@@ -71,29 +88,38 @@
   .liv-lightbox-backdrop.is-zoomed .liv-lightbox-arrow{opacity:0;visibility:hidden;pointer-events:none}
   .liv-lightbox-prev{left:16px}
   .liv-lightbox-next{right:16px}
-  .liv-footer{background:var(--color-neutral-900);color:var(--color-neutral-300);margin-top:clamp(56px,9vw,104px)}
-  .liv-footer-grid{max-width:1180px;margin:0 auto;padding:36px clamp(16px,5vw,64px) 32px;display:grid;grid-template-columns:minmax(230px,1.2fr) minmax(220px,1fr) minmax(190px,.85fr) minmax(170px,.7fr);gap:clamp(24px,3.5vw,44px);align-items:start}
-  .liv-footer-brand{font-family:var(--font-heading);font-size:25px;letter-spacing:.06em;color:#fff;margin-bottom:9px;display:flex;align-items:center;gap:9px}
-  .liv-footer-brand-mark{width:34px;height:34px;display:block;flex:none;background:linear-gradient(135deg,var(--color-bg) 0 62%,var(--color-accent) 62% 100%);-webkit-mask:url('img/brand/livinn-icon.png') center/contain no-repeat;mask:url('img/brand/livinn-icon.png') center/contain no-repeat}
-  .liv-footer-heading{font-family:var(--font-heading);color:#fff;font-size:15px;margin:0 0 10px}
-  .liv-footer-copy{margin:0;font-size:13px;line-height:1.65;color:var(--color-neutral-400);max-width:38ch}
-  .liv-footer-list{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:13px;line-height:1.5}
+  .liv-footer{background:var(--color-neutral-900);color:var(--color-neutral-300);margin-top:clamp(44px,7vw,80px)}
+  .liv-footer-grid{max-width:1100px;margin:0 auto;padding:20px clamp(18px,4vw,48px) 16px;display:grid;grid-template-columns:minmax(220px,1.15fr) minmax(210px,1fr) minmax(180px,.85fr) minmax(150px,.65fr);gap:clamp(16px,2.3vw,26px);align-items:start}
+  .liv-footer-grid>div{min-width:0;text-align:center}
+  .liv-footer-brand{font-family:var(--font-heading);font-size:23px;letter-spacing:.06em;color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .liv-footer-brand-mark{width:30px;height:30px;display:block;flex:none;background:linear-gradient(135deg,var(--color-bg) 0 62%,var(--color-accent) 62% 100%);-webkit-mask:url('img/brand/livinn-icon.png') center/contain no-repeat;mask:url('img/brand/livinn-icon.png') center/contain no-repeat}
+  .liv-footer-heading{font-family:var(--font-heading);color:#fff;font-size:14px;margin:0 0 5px}
+  .liv-footer-copy{margin:0 auto;font-size:12px;line-height:1.5;color:var(--color-neutral-400);max-width:38ch}
+  .liv-footer-list{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-size:12px;line-height:1.4}
+  .liv-footer-contact-link{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+  .liv-footer-contact-icon{width:15px;height:15px;flex:none;transform:translateY(-1px)}
+  .liv-footer-contact-link span{overflow-wrap:anywhere}
   .liv-footer-list a,.liv-footer-policy-link{color:var(--color-accent-300)}
   .liv-footer-list a:hover,.liv-footer-policy-link:hover{color:#fff}
-  .liv-footer-policy-links{display:grid;gap:4px}
-  .liv-footer-policy-link{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:36px;font-size:13px;line-height:1.35;border-bottom:1px solid rgba(255,255,255,.09)}
-  .liv-footer-policy-link::after{content:'↗';font-size:12px;color:var(--color-neutral-500)}
-  .liv-footer-socials{display:flex;gap:9px}
-  .liv-footer-social{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--color-neutral-400)}
-  .liv-footer-social-note{margin:9px 0 0;font-size:11px;line-height:1.45;color:var(--color-neutral-500)}
+  .liv-footer-policy-links{display:grid;gap:2px}
+  .liv-footer-policy-link{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;min-height:27px;padding-inline:16px;font-size:12px;line-height:1.25;text-align:center;border-bottom:1px solid rgba(255,255,255,.09)}
+  .liv-footer-policy-link::after{content:'↗';position:absolute;right:2px;font-size:12px;color:var(--color-neutral-500)}
+  .liv-footer-brand,.liv-footer-socials{justify-content:center}
+  .liv-footer-socials{display:flex;gap:8px}
+  .liv-footer-social{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--color-neutral-400)}
+  .liv-footer-social-note{margin:6px 0 0;font-size:10px;line-height:1.4;color:var(--color-neutral-500)}
+  .liv-footer-mobile-review{display:none}
+  .liv-consult-actions{justify-content:center}
   .liv-footer-bottom{border-top:1px solid rgba(255,255,255,.1)}
-  .liv-footer-bottom-inner{max-width:1180px;margin:0 auto;padding:15px clamp(16px,5vw,64px);font-size:11px;line-height:1.5;color:var(--color-neutral-500);display:flex;justify-content:space-between;gap:10px 24px;flex-wrap:wrap}
+  .liv-footer-bottom-inner{max-width:1100px;margin:0 auto;padding:8px clamp(18px,4vw,48px);font-size:10px;line-height:1.35;color:var(--color-neutral-500);display:flex;justify-content:center;text-align:center;gap:6px 20px;flex-wrap:wrap}
   @media (max-width:1000px){
     .liv-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   }
   @media (max-width:900px){
     #top{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
     .liv-desktop-nav,.liv-hamburger,.liv-mobile-menu{display:none!important}
+    .liv-header-cta-desktop{display:none!important}
+    .liv-header-cta-mobile{display:inline-flex}
     .liv-bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:80;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));min-height:64px;padding:0 max(4px,env(safe-area-inset-left)) env(safe-area-inset-bottom) max(4px,env(safe-area-inset-right));background:color-mix(in srgb,var(--color-surface) 96%,transparent);border-top:1px solid var(--color-divider);box-shadow:0 -8px 24px rgba(28,27,24,.12);backdrop-filter:blur(14px)}
     .liv-lightbox-backdrop{background:rgba(13,12,11,.975)}
     .liv-lightbox-arrow{display:inline-flex!important;width:44px;height:44px;background:rgba(255,255,255,.8);border-color:rgba(255,255,255,.68);box-shadow:0 5px 18px rgba(0,0,0,.28);opacity:.86;backdrop-filter:blur(8px)}
@@ -105,6 +131,12 @@
   }
   @media (max-width:600px){
     .liv-hero-image{object-position:64% center!important}
+    .liv-hero-overlay{background:linear-gradient(90deg,rgba(20,19,17,.88) 0%,rgba(20,19,17,.68) 45%,rgba(20,19,17,.18) 78%),linear-gradient(180deg,rgba(30,28,24,.12) 0%,rgba(30,28,24,.2) 38%,rgba(30,28,24,.8) 100%)!important}
+    .liv-hero-content{padding:0 20px 34px!important}
+    .liv-hero-copy{width:min(58vw,230px);max-width:calc(100vw - 40px);position:relative;z-index:1}
+    .liv-hero-copy h1{font-size:clamp(30px,8.7vw,36px)!important;line-height:1.02!important;max-width:9ch!important}
+    .liv-hero-copy>p:first-child{font-size:10px!important;line-height:1.4;max-width:24ch;margin-bottom:11px!important}
+    .liv-hero-description{font-size:14px!important;line-height:1.42!important;margin-top:14px!important;max-width:24ch!important}
     .liv-header-inner{padding-inline:12px!important;gap:8px!important}
     .liv-brand{font-size:21px!important}
     .liv-brand-mark{width:28px;height:28px}
@@ -113,20 +145,39 @@
     .liv-short-label{display:inline}
     .liv-desktop-copy{display:none!important}
     .liv-mobile-copy{display:inline!important}
-    .liv-hero-actions{margin-top:22px!important;gap:10px!important;flex-direction:column;align-items:flex-start}
-    .liv-hero-cta{width:min(100%,260px)!important;justify-content:center;padding:12px 18px!important;font-size:14px!important;min-height:48px!important}
+    .liv-hero-actions{margin-top:18px!important;gap:8px!important;flex-direction:column;align-items:flex-start}
+    .liv-hero-cta{width:100%!important;justify-content:center;padding:10px 12px!important;font-size:13px!important;min-height:46px!important}
     .liv-availability-note{max-width:none}
     .input,textarea,select{font-size:16px!important}
     .liv-modal-header{padding:14px 16px}
     .liv-modal-body{padding:18px 16px 20px}
+    .liv-rating-card{margin-top:16px}
     .liv-lightbox-stage{width:94vw;height:72vh}
     .liv-lightbox-shell{max-width:96vw}
     .liv-lightbox-controls{right:10px}
     .liv-lightbox-caption{font-size:12px}
-    .liv-footer-grid{padding:28px 18px 24px;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:22px 18px}
-    .liv-footer-intro,.liv-footer-contact{grid-column:1/-1}
-    .liv-footer-policy-link{font-size:12px}
-    .liv-footer-bottom-inner{padding:13px 18px;display:grid;gap:4px}
+    .liv-footer-grid{padding:14px 16px 12px;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:10px}
+    .liv-footer-intro{grid-column:1/-1;grid-row:1}
+    .liv-footer-info{grid-column:1/-1;grid-row:2}
+    .liv-footer-contact{grid-column:1;grid-row:3}
+    .liv-footer-networks{grid-column:2;grid-row:3}
+    .liv-footer-intro{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px}
+    .liv-footer-brand{font-size:21px;margin-bottom:0;gap:7px}
+    .liv-footer-brand-mark{width:27px;height:27px}
+    .liv-footer-heading{font-size:13px;margin-bottom:5px}
+    .liv-footer-copy{font-size:11px;line-height:1.4}
+    .liv-footer-list{gap:2px;font-size:11px;line-height:1.35}
+    .liv-footer-contact .liv-footer-list{grid-template-columns:minmax(0,1fr)}
+    .liv-footer-contact .liv-footer-list li:last-child{grid-column:1}
+    .liv-footer-policy-link{min-height:27px;font-size:11px}
+    .liv-footer-social{width:30px;height:30px}
+    .liv-footer-social-note{margin-top:5px;font-size:9px}
+    .liv-footer-desktop-review{display:flex}
+    .liv-footer-mobile-review{display:none}
+    .liv-footer-info .liv-footer-policy-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 10px}
+    .liv-consult-actions{flex-direction:column;align-items:center}
+    .liv-consult-actions>.btn{width:min(100%,320px);justify-content:center}
+    .liv-footer-bottom-inner{padding:7px 16px;display:grid;gap:2px;font-size:9px}
   }
   @media (min-width:901px){ .liv-mobile-menu{display:none!important} }
   @keyframes livFade{from{opacity:0}to{opacity:1}}
@@ -144,10 +195,11 @@
           <a class="liv-nav-link" data-navlink href="{{ link.href }}" onClick="{{ link.go }}">{{ link.label }}</a>
         </sc-for>
       </nav>
-      <button type="button" class="btn btn-primary liv-header-cta" onClick="{{ goBuscador }}" aria-label="Ir a consultar fechas" style="min-height:44px">
+      <button type="button" class="btn btn-primary liv-header-cta liv-header-cta-desktop" onClick="{{ goBuscador }}" aria-label="Ir a consultar fechas" style="min-height:44px">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
         <span class="liv-full-label">Consultar fechas</span><span class="liv-short-label">Fechas</span>
       </button>
+      <a class="btn btn-primary liv-header-cta liv-header-cta-mobile" href="#soporte" onClick="{{ goSoporte }}" aria-label="Ir a las opciones de consulta y soporte" style="min-height:44px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 1 1 5.8 1c0 2-2.9 2-2.9 4"/><path d="M12 18h.01"/></svg><span>Ayuda</span></a>
       <button type="button" class="btn btn-secondary btn-icon liv-hamburger" ref="{{ menuButtonRef }}" aria-label="{{ menuLabel }}" aria-expanded="{{ menuExpanded }}" aria-controls="liv-mobile-menu" onClick="{{ toggleMenu }}" style="width:44px;height:44px">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -166,17 +218,19 @@
     <figure data-image-id="hero-livinn" data-image-role="portada" data-image-ratio="16:9" data-image-status="final" style="margin:0;position:absolute;inset:0;overflow:hidden;background:var(--color-neutral-300)">
       <img class="liv-hero-image" src="img/hero/hero-livinn-aereo.webp" srcset="img/responsive/hero-livinn-aereo-640.webp 640w, img/responsive/hero-livinn-aereo-960.webp 960w, img/hero/hero-livinn-aereo.webp 1672w" sizes="100vw" width="1672" height="940" alt="Cabaña LIVINN iluminada en una vista amplia del bosque al atardecer" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:68% center">
     </figure>
-    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,27,24,.78) 0%,rgba(28,27,24,.38) 54%,rgba(28,27,24,.08) 78%),linear-gradient(180deg,rgba(46,43,37,.18) 0%,rgba(46,43,37,.22) 45%,rgba(46,43,37,.70) 100%);pointer-events:none"></div>
-    <div style="position:relative;width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,64px) clamp(48px,8vw,84px)">
-      <p style="color:var(--color-accent-200);font-family:var(--font-body);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin:0 0 16px"><span class="liv-desktop-copy">Llano Grande · Carretera Durango - Mazatlán km 80</span><span class="liv-mobile-copy">Llano Grande · Durango</span></p>
-      <h1 style="font-family:var(--font-heading);color:#fff;font-size:clamp(36px,6vw,74px);line-height:1.05;letter-spacing:-.01em;margin:0;max-width:16ch;text-wrap:balance"><span class="liv-desktop-copy">Descanso de madera entre bosque y montaña</span><span class="liv-mobile-copy">Descanso entre bosque y montaña</span></h1>
-      <p style="color:rgba(255,255,255,.92);font-size:clamp(16px,2vw,20px);line-height:1.6;max-width:52ch;margin:22px 0 0;text-wrap:pretty"><span class="liv-desktop-copy">Cabañas cálidas para desconectarte de todo. Chimenea, cocina equipada y el silencio del pinar a un paso de la puerta.</span><span class="liv-mobile-copy">Cabañas cálidas para desconectarte.</span></p>
+    <div class="liv-hero-overlay" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,27,24,.78) 0%,rgba(28,27,24,.38) 54%,rgba(28,27,24,.08) 78%),linear-gradient(180deg,rgba(46,43,37,.18) 0%,rgba(46,43,37,.22) 45%,rgba(46,43,37,.70) 100%);pointer-events:none"></div>
+    <div class="liv-hero-content" style="position:relative;width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,64px) clamp(48px,8vw,84px)">
+      <div class="liv-hero-copy">
+      <p style="color:var(--color-accent-200);font-family:var(--font-body);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin:0 0 16px">Llano Grande · Carretera Durango - Mazatlán km 80</p>
+      <h1 style="font-family:var(--font-heading);color:#fff;font-size:clamp(36px,6vw,74px);line-height:1.05;letter-spacing:-.01em;margin:0;max-width:16ch;text-wrap:balance">Cabañas, confort y naturaleza</h1>
+      <p class="liv-hero-description" style="color:rgba(255,255,255,.92);font-size:clamp(16px,2vw,20px);line-height:1.6;max-width:52ch;margin:22px 0 0;text-wrap:pretty"><span class="liv-desktop-copy">Descubre el equilibrio entre la calidez de nuestras unidades y el silencio del pinar, a un paso de tu puerta.</span><span class="liv-mobile-copy">Calidez, confort y el silencio del pinar a un paso de tu puerta.</span></p>
       <div class="liv-hero-actions" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
         <button type="button" class="btn btn-primary liv-hero-cta" style="padding:14px 26px;font-size:16px;min-height:48px" onClick="{{ goUnidades }}">Ver unidades</button>
         <button type="button" class="btn liv-hero-cta" style="padding:14px 26px;font-size:16px;min-height:48px;color:#fff;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.08)" style-hover="background:rgba(255,255,255,.18)" onClick="{{ goBuscador }}">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
           Consultar fechas
         </button>
+      </div>
       </div>
     </div>
   </section>
@@ -188,7 +242,8 @@
 
     <div role="list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px;align-items:stretch">
       <sc-for list="{{ units }}" as="unit" hint-placeholder-count="4">
-        <article role="listitem" class="card elev-sm" style="padding:0;overflow:hidden;gap:0;transition:box-shadow .2s ease,transform .2s ease" style-hover="transform:translateY(-4px);box-shadow:var(--shadow-lg)">
+        <article role="listitem" class="card elev-sm liv-unit-card" style="padding:0;overflow:hidden;gap:0;transition:box-shadow .2s ease,transform .2s ease">
+          <button type="button" class="liv-unit-card-trigger" data-unit-open="{{ unit.slug }}" aria-haspopup="dialog" aria-label="{{ unit.cardAria }}" onClick="{{ unit.abrir }}"></button>
           <figure data-image-ref="{{ unit.exterior.id }}" data-image-unit="{{ unit.slug }}" data-image-role="exterior" data-image-ratio="3:2" style="margin:0;position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--color-neutral-200)">
             <img src="{{ unit.exterior.src }}" srcset="{{ unit.exterior.srcset }}" sizes="(max-width:600px) calc(100vw - 32px), (max-width:1180px) 44vw, 520px" width="{{ unit.exterior.width }}" height="{{ unit.exterior.height }}" alt="{{ unit.exterior.alt }}" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover">
           </figure>
@@ -205,7 +260,7 @@
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px">
               <span style="font-family:var(--font-heading);font-size:17px;color:var(--color-accent-700)">{{ unit.priceLabel }}</span>
-              <button type="button" class="btn btn-secondary" data-unit-open="{{ unit.slug }}" aria-haspopup="dialog" onClick="{{ unit.abrir }}" style="min-height:44px">Ver detalle</button>
+              <span class="liv-card-review-summary" aria-hidden="true"><span class="liv-card-rating-line"><span class="liv-card-stars">★★★★★</span><span class="liv-card-score">5.0</span></span><span class="liv-card-details">Ver detalles →</span></span>
             </div>
           </div>
         </article>
@@ -259,27 +314,27 @@
       <div style="border:1px solid var(--color-divider);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:12px">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-2-700)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2z"/></svg>
         <h3 style="margin:0;font-family:var(--font-heading);font-size:18px">Caminatas por el bosque</h3>
-        <p style="margin:0;font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Senderos entre pinos que salen casi desde la puerta.</p>
+        <p style="margin:0;font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Recorridos entre pinos para disfrutar el paisaje y conectar con la naturaleza.</p>
       </div>
       <div style="border:1px solid var(--color-divider);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:12px">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-2-700)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/></svg>
         <h3 style="margin:0;font-family:var(--font-heading);font-size:18px">Día de lago</h3>
-        <p style="margin:0;font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Tardes de agua, pesca tranquila y picnic a la orilla.</p>
+        <p style="margin:0;font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Momentos junto al agua para descansar, compartir y disfrutar del paisaje.</p>
       </div>
       <div style="border:1px solid var(--color-divider);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:12px">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-2-700)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
         <h3 style="margin:0;font-family:var(--font-heading);font-size:18px">Miradores</h3>
-        <p style="margin:0;font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Puntos altos para ver la sierra teñirse al atardecer.</p>
+        <p style="margin:0;font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Paisajes abiertos para contemplar la sierra y el atardecer.</p>
       </div>
       <div style="border:1px solid var(--color-divider);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:12px">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-2-700)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
         <h3 style="margin:0;font-family:var(--font-heading);font-size:18px">Gastronomía local</h3>
-        <p style="margin:0;font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Sabores de Durango a pocos minutos del alojamiento.</p>
+        <p style="margin:0;font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Una oportunidad para descubrir los sabores de Durango durante la visita.</p>
       </div>
       <div style="border:1px solid var(--color-divider);border-radius:var(--radius-lg);padding:24px;display:flex;flex-direction:column;gap:12px">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-2-700)" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2"/><path d="M5 11V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4"/><path d="M5 18v2"/><path d="M19 18v2"/></svg>
-        <h3 style="margin:0;font-family:var(--font-heading);font-size:18px">Descanso en deck y parrilla</h3>
-        <p style="margin:0;font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">A veces el mejor plan es no salir del deck en todo el día.</p>
+        <h3 style="margin:0;font-family:var(--font-heading);font-size:18px">Descanso en terraza y parrilla</h3>
+        <p style="margin:0;font-size:14px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">A veces el mejor plan es quedarse a disfrutar la terraza y el bosque.</p>
       </div>
     </div>
   </section>
@@ -322,7 +377,7 @@
     <div style="background:var(--color-accent-2-100);border-radius:calc(var(--radius-lg) * 1.2);padding:clamp(24px,4vw,44px)">
       <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:18px 32px;flex-wrap:wrap;margin-bottom:24px">
         <div>
-          <span style="display:block;color:var(--color-accent-700);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px;margin-bottom:8px">Planifica tu estadía</span>
+          <span style="display:block;color:var(--color-accent-700);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px;margin-bottom:8px">Planifica tu estancia</span>
           <h2 id="liv-buscador-titulo" style="font-size:clamp(26px,3.6vw,40px);margin:0">Consulta tus fechas</h2>
           <p style="margin:8px 0 0;font-size:15px;color:color-mix(in srgb,var(--color-text) 70%,transparent)">Elige una unidad y prepara tu consulta personalizada.</p>
         </div>
@@ -334,8 +389,8 @@
 
       <div style="background:var(--color-surface);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);padding:clamp(20px,3vw,32px)">
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
-          <div class="field"><label for="liv-checkin">Fecha de ingreso</label><input id="liv-checkin" class="input" type="date" min="{{ todayISO }}" value="{{ form.checkin }}" onInput="{{ onCheckin }}" required></div>
-          <div class="field"><label for="liv-checkout">Fecha de salida</label><input id="liv-checkout" class="input" type="date" min="{{ minCheckout }}" value="{{ form.checkout }}" onInput="{{ onCheckout }}" required></div>
+          <div class="field"><label for="liv-checkin">Fecha de ingreso</label><input id="liv-checkin" class="input" type="date" min="{{ todayISO }}" max="{{ maxCheckin }}" value="{{ form.checkin }}" onClick="{{ openDatePicker }}" onInput="{{ onCheckin }}" required></div>
+          <div class="field"><label for="liv-checkout">Fecha de salida</label><input id="liv-checkout" class="input" type="date" min="{{ minCheckout }}" max="{{ maxCheckout }}" value="{{ form.checkout }}" onClick="{{ openDatePicker }}" onInput="{{ onCheckout }}" required></div>
           <div class="field"><label for="liv-huespedes">Huéspedes</label>
             <select id="liv-huespedes" class="input" value="{{ form.huespedes }}" onChange="{{ onHuespedes }}">
               <option value="1">1 huésped</option><option value="2">2 huéspedes</option><option value="3">3 huéspedes</option><option value="4">4 huéspedes</option><option value="5">5 huéspedes</option><option value="6">6 huéspedes</option><option value="7">7 huéspedes</option><option value="8">8 huéspedes</option><option value="9">9 huéspedes</option><option value="10">10 huéspedes</option>
@@ -351,14 +406,14 @@
             </select>
           </div>
           <div class="field"><label for="liv-nombre">Tu nombre</label><input id="liv-nombre" class="input" type="text" autocomplete="name" placeholder="¿Cómo te llamas?" value="{{ form.nombre }}" onInput="{{ onNombre }}" required></div>
-          <div class="field" style="grid-column:1/-1"><label for="liv-comentario">Comentario (opcional)</label><textarea id="liv-comentario" class="input" style="border-radius:14px" placeholder="¿Algo que debamos saber? Mascotas, horario de llegada, festejos…" value="{{ form.comentario }}" onInput="{{ onComentario }}"></textarea></div>
+          <div class="field" style="grid-column:1/-1"><label for="liv-comentario">Detalles de tu consulta (opcional)</label><textarea id="liv-comentario" class="input" style="border-radius:14px" placeholder="Escribe aquí cualquier detalle: mascotas, horario estimado de llegada u ocasión especial." value="{{ form.comentario }}" onInput="{{ onComentario }}"></textarea></div>
         </div>
 
         <sc-if value="{{ hasWarning }}" hint-placeholder-val="{{ false }}">
           <div role="alert" style="margin-top:16px;background:var(--color-accent-100);border:1px solid var(--color-accent-300);color:var(--color-accent-800);border-radius:var(--radius-md);padding:12px 16px;font-size:14px">{{ warning }}</div>
         </sc-if>
 
-        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px">
+        <div id="soporte" class="liv-consult-actions" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:20px">
           <button type="button" class="btn btn-primary" style="padding:13px 22px;font-size:15px;min-height:46px" onClick="{{ consultar }}">
             <svg class="liv-wa-icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.66 15L2 22l5.15-1.35A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.08-1.12l-.29-.17-3.05.8.81-2.97-.19-.3A8 8 0 1 1 12 20Zm4.38-5.46c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg>
             Enviar consulta
@@ -382,20 +437,21 @@
       <div class="liv-footer-contact">
         <h3 class="liv-footer-heading">Contacto</h3>
         <ul class="liv-footer-list">
-          <li><a href="{{ waLink }}" target="_blank" rel="noopener">WhatsApp: {{ waDisplay }}</a></li>
-          <li><a href="{{ mailto }}">{{ email }}</a></li>
+          <li><a class="liv-footer-contact-link" href="{{ waLink }}" target="_blank" rel="noopener" aria-label="WhatsApp: {{ waDisplay }}"><svg class="liv-footer-contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.66 15L2 22l5.15-1.35A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.08-1.12l-.29-.17-3.05.8.81-2.97-.19-.3A8 8 0 1 1 12 20Zm4.38-5.46c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>{{ waDisplay }}</span></a></li>
+          <li><a class="liv-footer-contact-link" href="{{ mailto }}" aria-label="Correo electrónico: {{ email }}"><svg class="liv-footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>{{ email }}</span></a></li>
           <li style="color:var(--color-neutral-400)">Carretera Durango - Mazatlán km 80, Llano Grande, Dgo.</li>
         </ul>
       </div>
-      <div>
+      <div class="liv-footer-info">
         <h3 class="liv-footer-heading">Información</h3>
         <div class="liv-footer-policy-links">
           <a class="liv-footer-policy-link" href="politicas.html#alojamiento" target="_blank" rel="noopener">Políticas de alojamiento</a>
           <a class="liv-footer-policy-link" href="politicas.html#privacidad" target="_blank" rel="noopener">Privacidad y datos</a>
-          <a class="liv-footer-policy-link" href="https://github.com/livinnai2026-star/LIVINN-entrega-academica" target="_blank" rel="noopener noreferrer">Código y memoria técnica</a>
+          <a class="liv-footer-policy-link liv-footer-desktop-review" href="resenas.html">Reseñas</a>
+          <a class="liv-footer-policy-link" href="https://github.com/livinnai2026-star/LIVINN-entrega-academica" target="_blank" rel="noopener noreferrer">Repositorio GitHub</a>
         </div>
       </div>
-      <div>
+      <div class="liv-footer-networks">
         <h3 class="liv-footer-heading">Redes</h3>
         <div class="liv-footer-socials">
           <sc-if value="{{ ig.active }}" hint-placeholder-val="{{ false }}">
@@ -412,6 +468,7 @@
           </sc-if>
         </div>
         <p class="liv-footer-social-note">Perfiles demostrativos,<br>aún sin configurar.</p>
+        <a class="liv-footer-policy-link liv-footer-mobile-review" href="resenas.html">Reseñas</a>
       </div>
     </div>
     <div class="liv-footer-bottom">
@@ -427,7 +484,7 @@
     <a class="liv-bottom-link" data-navlink href="#unidades" onClick="{{ goUnidades }}"><span class="liv-bottom-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4M12 4v6M2 18h20"/></svg></span><span>Unidades</span></a>
     <a class="liv-bottom-link" data-navlink href="#galeria" onClick="{{ goGaleria }}"><span class="liv-bottom-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg></span><span>Galería</span></a>
     <a class="liv-bottom-link" data-navlink href="#ubicacion" onClick="{{ goUbicacion }}"><span class="liv-bottom-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><span>Ubicación</span></a>
-    <a class="liv-bottom-link" href="{{ waSupportLink }}" target="_blank" rel="noopener" aria-label="Abrir ayuda por WhatsApp en una pestaña nueva"><span class="liv-bottom-icon" aria-hidden="true"><svg class="liv-wa-icon" width="21" height="21" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.66 15L2 22l5.15-1.35A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.08-1.12l-.29-.17-3.05.8.81-2.97-.19-.3A8 8 0 1 1 12 20Zm4.38-5.46c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg></span><span>Ayuda</span></a>
+    <a class="liv-bottom-link" data-navlink href="#buscador" onClick="{{ goBuscador }}" aria-label="Ir a consultar fechas"><span class="liv-bottom-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg></span><span>Fechas</span></a>
   </nav>
 
   <sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
@@ -470,6 +527,10 @@
                 <sc-for list="{{ activeUnit.servicios }}" as="s" hint-placeholder-count="6">
                   <span class="tag tag-neutral">{{ s }}</span>
                 </sc-for>
+              </div>
+              <div class="liv-rating-card">
+                <div class="liv-rating-row"><span class="liv-stars" style="--rating-percent:{{ activeUnit.ratingPercent }}" role="img" aria-label="{{ activeUnit.ratingAria }}">★★★★★</span><strong class="liv-rating-score">{{ activeUnit.rating }}</strong><span style="font-size:12px;color:color-mix(in srgb,var(--color-text) 64%,transparent)">4 reseñas</span></div>
+                <a class="liv-rating-link" href="{{ activeUnit.reviewsHref }}">Leer reseñas →</a>
               </div>
             </div>
           </div>
@@ -541,10 +602,20 @@ class Component extends DCLogic {
   _iso(d) { const x = new Date(d); x.setHours(0, 0, 0, 0); const off = x.getTimezoneOffset(); return new Date(x.getTime() - off * 60000).toISOString().slice(0, 10); }
   _today() { return this._iso(new Date()); }
   _nextDay(iso) { const d = new Date((iso || this._today()) + 'T00:00'); d.setDate(d.getDate() + 1); return this._iso(d); }
+  _previousDay(iso) { const d = new Date((iso || this._today()) + 'T00:00'); d.setDate(d.getDate() - 1); return this._iso(d); }
+  _maxReservationDate() { const d = new Date(this._today() + 'T00:00'); d.setFullYear(d.getFullYear() + 1); return this._iso(d); }
 
-  _image(id, role, label, alt, src, width, height, responsiveId) {
+  _openDatePicker(e) {
+    const input = e && (e.currentTarget || e.target);
+    if (!input || input.type !== 'date' || input.disabled || input.readOnly) return;
+    if (typeof input.showPicker === 'function') {
+      try { input.showPicker(); } catch (err) {}
+    }
+  }
+
+  _image(id, role, label, alt, src, width, height, responsiveId, responsiveWidths) {
     const rid = responsiveId || id;
-    const widths = [480, 768, 1200].filter((w) => w < width);
+    const widths = (responsiveWidths || [480, 768, 1200]).filter((w) => w < width);
     const srcset = widths.map((w) => 'img/responsive/' + rid + '-' + w + '.webp ' + w + 'w').concat(src + ' ' + width + 'w').join(', ');
     return { id, role, label, alt, src, width, height, srcset };
   }
@@ -552,52 +623,52 @@ class Component extends DCLogic {
   _units() {
     const mk = (...args) => this._image(...args);
     return [
-      { slug: 'arrayan', nombre: 'Cabaña Arrayán', cap: '2 personas',
+      { slug: 'arrayan', nombre: 'Cabaña Arrayán', cap: '2 personas', rating: '5.0', ratingPercent: '100%',
         ideal: 'Una escapada íntima en pareja, lejos del ruido.', price: '$900', pricePrefix: '', priceNote: '',
         resumen: 'Un refugio de madera con chimenea y vista directa a los pinos.',
-        ambientes: 'Monoambiente con cama matrimonial, baño completo y kitchenette.',
-        clave: ['Chimenea', 'WiFi', 'Vista al bosque'],
-        servicios: ['WiFi', 'Cocina equipada', 'Chimenea a leña', 'Calefacción', 'Ropa blanca', 'Estacionamiento'],
+        ambientes: 'Cabaña de espacio abierto con cama matrimonial, cocineta equipada y baño completo privado.',
+        clave: ['Chimenea', 'Wi‑Fi', 'Vista al bosque'],
+        servicios: ['Wi‑Fi', 'Cocineta equipada', 'Chimenea a leña', 'Calefacción', 'Ropa de cama', 'Estacionamiento', 'Vista al bosque'],
         spaces: [
           mk('arrayan-exterior', 'exterior', 'Exterior', 'Cabaña Arrayán de madera entre pinos nevados', 'img/unidades/arrayan/exterior.webp', 1536, 1024),
           mk('arrayan-dormitorio', 'dormitorio', 'Dormitorio', 'Dormitorio cálido de la Cabaña Arrayán con chimenea', 'img/unidades/arrayan/dormitorio.webp', 1448, 1086),
-          mk('arrayan-cocina', 'cocina', 'Cocina', 'Kitchenette de madera equipada de la Cabaña Arrayán', 'img/unidades/arrayan/cocina.webp', 1448, 1086),
+          mk('arrayan-cocina', 'cocina', 'Cocineta', 'Cocineta de madera equipada de la Cabaña Arrayán', 'img/unidades/arrayan/cocina.webp', 1448, 1086),
           mk('arrayan-bano', 'bano', 'Baño', 'Baño completo de madera y piedra de la Cabaña Arrayán', 'img/unidades/arrayan/bano.webp', 1448, 1086),
         ] },
-      { slug: 'mirador', nombre: 'Cabaña Mirador', cap: '2 a 4 personas',
-        ideal: 'Una pareja o una familia chica que busca espacio y vistas.', price: '$1,500', pricePrefix: '', priceNote: '',
+      { slug: 'mirador', nombre: 'Cabaña Mirador', cap: '2 a 4 personas', rating: '5.0', ratingPercent: '100%',
+        ideal: 'Una pareja o una familia pequeña que busca espacio y vistas.', price: '$1,500', pricePrefix: '', priceNote: '',
         resumen: 'Cabaña luminosa con terraza y una vista abierta a la sierra.',
-        ambientes: 'Un dormitorio, living con sofá cama, cocina integrada y terraza.',
-        clave: ['Terraza', 'WiFi', 'Parrilla'],
-        servicios: ['WiFi', 'Cocina equipada', 'Calefacción', 'Ropa blanca', 'Parrilla', 'Estacionamiento', 'Vista a la sierra'],
+        ambientes: 'Una habitación, sala con sofá cama, cocina integrada y terraza.',
+        clave: ['Terraza', 'Wi‑Fi', 'Parrilla'],
+        servicios: ['Wi‑Fi', 'Cocina equipada', 'Calefacción', 'Ropa de cama', 'Parrilla', 'Estacionamiento', 'Vista a la sierra'],
         spaces: [
           mk('mirador-exterior', 'exterior', 'Exterior', 'Cabaña Mirador con terraza elevada y vista a la sierra', 'img/unidades/mirador/exterior.webp', 1536, 1024),
-          mk('mirador-living', 'living', 'Living', 'Living panorámico de la Cabaña Mirador con sofá cama', 'img/unidades/mirador/living.webp', 1448, 1086),
+          mk('mirador-living', 'living', 'Sala', 'Sala panorámica de la Cabaña Mirador con sofá cama', 'img/unidades/mirador/living.webp', 1448, 1086),
           mk('mirador-dormitorio', 'dormitorio', 'Dormitorio', 'Dormitorio luminoso de la Cabaña Mirador', 'img/unidades/mirador/dormitorio.webp', 1448, 1086),
           mk('mirador-terraza', 'terraza', 'Terraza', 'Terraza de la Cabaña Mirador abierta a la sierra', 'img/unidades/mirador/terraza.webp', 1448, 1086),
         ] },
-      { slug: 'lago', nombre: 'Lodge del Lago', cap: '4 a 6 personas',
+      { slug: 'lago', nombre: 'Lodge del Lago', cap: '4 a 6 personas', rating: '5.0', ratingPercent: '100%',
         ideal: 'Disfrutar en familia con el agua a pasos de la puerta.', price: '$3,000', pricePrefix: 'Desde ', priceNote: 'Precio final sujeto a validación administrativa.',
-        resumen: 'Espacioso lodge de madera a la orilla, pensado para la familia.',
-        ambientes: 'Dos dormitorios, living-comedor, cocina completa y deck exterior.',
-        clave: ['Deck', 'WiFi', 'Vista al lago'],
-        servicios: ['WiFi', 'Cocina equipada', 'Calefacción', 'Ropa blanca', 'Parrilla', 'Estacionamiento', 'Vista al lago'],
+        resumen: 'Espacioso lodge de madera a la orilla del lago, pensado para familias.',
+        ambientes: 'Dos habitaciones, sala-comedor, cocina completa y terraza exterior.',
+        clave: ['Terraza', 'Wi‑Fi', 'Vista al lago'],
+        servicios: ['Wi‑Fi', 'Cocina equipada', 'Calefacción', 'Ropa de cama', 'Parrilla', 'Estacionamiento', 'Vista al lago'],
         spaces: [
           mk('lago-exterior', 'exterior', 'Exterior', 'Lodge del Lago de madera junto al agua', 'img/unidades/lago/exterior.webp', 1536, 1024),
-          mk('lago-living-comedor', 'living-comedor', 'Living-comedor', 'Living-comedor familiar del Lodge del Lago frente al agua', 'img/unidades/lago/living-comedor.webp', 1448, 1086),
+          mk('lago-living-comedor', 'living-comedor', 'Sala-comedor', 'Sala-comedor familiar del Lodge del Lago frente al agua', 'img/unidades/lago/living-comedor.webp', 1448, 1086),
           mk('lago-dormitorio', 'dormitorio', 'Dormitorio', 'Dormitorio del Lodge del Lago con vista al agua', 'img/unidades/lago/dormitorio.webp', 1448, 1086),
-          mk('lago-deck', 'deck', 'Deck', 'Deck exterior del Lodge del Lago frente al agua', 'img/unidades/lago/deck.webp', 1448, 1086),
+          mk('lago-deck', 'deck', 'Terraza', 'Terraza exterior del Lodge del Lago frente al agua', 'img/unidades/lago/deck.webp', 1448, 1086),
         ] },
-      { slug: 'refugio', nombre: 'Refugio del Bosque', cap: '6 a 10 personas',
-        ideal: 'Grupos grandes y reuniones que quieren estar todos juntos.', price: '$4,000', pricePrefix: '', priceNote: '',
+      { slug: 'refugio', nombre: 'Refugio del Bosque', cap: '6 a 10 personas', rating: '5.0', ratingPercent: '100%',
+        ideal: 'Grupos grandes y reuniones que buscan compartir el mismo espacio.', price: '$4,000', pricePrefix: '', priceNote: '',
         resumen: 'Nuestra unidad más amplia, rodeada de bosque, con fogatero y tina exterior.',
-        ambientes: 'Tres dormitorios, dos baños, gran living con chimenea y deck con parrilla.',
+        ambientes: 'Tres habitaciones, dos baños, sala amplia con chimenea y terraza con parrilla.',
         clave: ['Fogatero', 'Tina exterior', 'Parrilla'],
-        servicios: ['WiFi', 'Cocina equipada', 'Chimenea a leña', 'Calefacción', 'Ropa blanca', 'Parrilla', 'Estacionamiento', 'Vista al bosque'],
+        servicios: ['Wi‑Fi', 'Cocina equipada', 'Chimenea a leña', 'Calefacción', 'Ropa de cama', 'Parrilla', 'Fogatero', 'Tina exterior', 'Estacionamiento', 'Vista al bosque'],
         spaces: [
           mk('refugio-exterior', 'exterior', 'Exterior', 'Refugio del Bosque de madera rodeado de pinos nevados', 'img/unidades/refugio/exterior.webp', 1536, 1024),
-          mk('refugio-living', 'living', 'Living', 'Gran living del Refugio del Bosque con chimenea de piedra', 'img/unidades/refugio/living.webp', 1448, 1086),
-          mk('refugio-dormitorio-grupal', 'dormitorio-grupal', 'Dormitorio grupal', 'Dormitorio grupal del Refugio del Bosque con dos cuchetas', 'img/unidades/refugio/dormitorio-grupal.webp', 1448, 1086),
+          mk('refugio-living', 'living', 'Sala', 'Sala amplia del Refugio del Bosque con chimenea de piedra', 'img/unidades/refugio/living.webp', 1448, 1086),
+          mk('refugio-dormitorio-grupal', 'dormitorio-grupal', 'Dormitorio grupal', 'Dormitorio grupal del Refugio del Bosque con dos literas', 'img/unidades/refugio/dormitorio-grupal.webp', 1448, 1086),
           mk('refugio-fogatero-tina', 'fogatero-tina', 'Fogatero y tina', 'Fogatero y tina exterior del Refugio del Bosque', 'img/unidades/refugio/fogatero-tina.webp', 1448, 1086),
         ] },
     ];
@@ -607,10 +678,10 @@ class Component extends DCLogic {
     return [
       this._image('galeria-interior', 'interior', 'Interior', 'Dormitorio cálido de madera con chimenea en LIVINN', 'img/unidades/arrayan/dormitorio.webp', 1448, 1086, 'arrayan-dormitorio'),
       this._image('galeria-exterior', 'exterior', 'Exterior', 'Cabaña Mirador con terraza y vista a la sierra', 'img/unidades/mirador/exterior.webp', 1536, 1024, 'mirador-exterior'),
-      this._image('galeria-deck', 'deck', 'Deck', 'Deck del Lodge del Lago frente al agua', 'img/unidades/lago/deck.webp', 1448, 1086, 'lago-deck'),
+      this._image('galeria-deck', 'deck', 'Terraza', 'Terraza del Lodge del Lago frente al agua', 'img/unidades/lago/deck.webp', 1448, 1086, 'lago-deck'),
       this._image('galeria-parrilla', 'parrilla', 'Fogatero y tina', 'Fogatero y tina exterior del Refugio del Bosque', 'img/unidades/refugio/fogatero-tina.webp', 1448, 1086, 'refugio-fogatero-tina'),
-      this._image('galeria-bosque', 'bosque', 'Bosque', 'Sendero entre pinos nevados en los alrededores de LIVINN', 'img/entorno/bosque.webp', 1448, 1086),
-      this._image('galeria-lago', 'lago', 'Lago', 'Lago de montaña rodeado de bosque cerca de LIVINN', 'img/entorno/lago.webp', 1448, 1086),
+      this._image('galeria-bosque', 'bosque', 'Bosque', 'Sendero entre pinos nevados en los alrededores de LIVINN', 'img/entorno/bosque.webp', 1448, 1086, 'galeria-bosque', [480, 768]),
+      this._image('galeria-lago', 'lago', 'Lago', 'Lago de montaña rodeado de bosque cerca de LIVINN', 'img/entorno/lago.webp', 1448, 1086, 'galeria-lago', [480, 768]),
     ];
   }
 
@@ -622,6 +693,7 @@ class Component extends DCLogic {
       return { checkin: v, checkout: co, warning: '' };
     });
   }
+  _setCheckout(v) { this.setState({ checkout: v, warning: '' }); }
 
   _price(u) { return this._showPrices() ? ((u.pricePrefix || '') + u.price + ' MXN / noche') : 'Consultar precio'; }
 
@@ -768,6 +840,10 @@ class Component extends DCLogic {
     }
     if (s.checkout <= s.checkin) {
       this.setState({ warning: 'La fecha de salida debe ser posterior a la de ingreso.' });
+      return;
+    }
+    if (s.checkin > this._previousDay(this._maxReservationDate()) || s.checkout > this._maxReservationDate()) {
+      this.setState({ warning: 'Por el momento recibimos consultas para estancias dentro de los próximos 12 meses.' });
       return;
     }
     const url = 'https://wa.me/' + this._wa() + '?text=' + encodeURIComponent(this._msg());
@@ -1008,12 +1084,15 @@ class Component extends DCLogic {
     const allUnits = this._units();
     const units = allUnits.map((u) => ({
       ...u, priceLabel: this._price(u), exterior: u.spaces[0],
+      cardAria: 'Ver detalles de ' + u.nombre + '; puntuación demostrativa: 5 de 5 estrellas',
       abrir: () => this._open(u.slug),
     }));
     const raw = allUnits.find((u) => u.slug === s.openSlug) || null;
     const activeUnit = raw ? {
       ...raw,
       priceLabel: this._price(raw),
+      ratingAria: raw.rating + ' de 5 estrellas, contenido demostrativo',
+      reviewsHref: 'resenas.html#' + raw.slug,
       priceNote: this._showPrices() ? raw.priceNote : '',
       hasPriceNote: this._showPrices() && !!raw.priceNote,
       spaces: raw.spaces.map((space, index) => ({ ...space, ariaLabel: 'Ampliar: ' + space.alt, abrir: () => this._openLightbox(raw.spaces, index, 'unit', raw.slug), teclado: (e) => this._keyActivate(e, () => this._openLightbox(raw.spaces, index, 'unit', raw.slug)) })),
@@ -1038,9 +1117,9 @@ class Component extends DCLogic {
 
     const faqData = [
       { q: '¿Cómo reservo?', a: 'Consulta la disponibilidad desde el buscador: se abre WhatsApp con tu mensaje ya escrito. Coordinamos las fechas contigo y te confirmamos por ese medio.' },
-      { q: '¿Aceptan mascotas?', a: 'Sí, somos pet friendly. Avísanos al reservar cuántas mascotas llevas para preparar todo.' },
-      { q: '¿Cuáles son los horarios de check-in y check-out?', a: 'El check-in es a partir de las 15:00 h y el check-out hasta las 11:00 h. Si necesitas otro horario, escríbenos y vemos qué se puede.' },
-      { q: '¿Hay estacionamiento?', a: 'Sí, cada cabaña cuenta con estacionamiento privado sin costo junto a la unidad.' },
+      { q: '¿Aceptan mascotas?', a: 'Consúltanos antes de reservar. La aceptación y las condiciones dependen de la unidad y de la validación administrativa.' },
+      { q: '¿Cuáles son los horarios de check-in y check-out?', a: 'La referencia es check-in desde las 15:00 h y check-out hasta las 11:00 h; los horarios finales se coordinan al confirmar la estancia.' },
+      { q: '¿Hay estacionamiento?', a: 'Las cuatro unidades incluyen estacionamiento. La ubicación del espacio se confirma al coordinar la llegada.' },
       { q: '¿Cómo se confirma la reserva?', a: 'Toda la coordinación es por WhatsApp: acordamos fechas y detalles y recibes la confirmación. No hay pago ni confirmación automática en el sitio.' },
     ];
     const faqs = faqData.map((f, i) => ({
@@ -1067,16 +1146,20 @@ class Component extends DCLogic {
       toggleMenu: () => this.setState((st) => ({ menuOpen: !st.menuOpen })),
       goInicio: (e) => { if (e) e.preventDefault(); this._go('inicio'); },
       goBuscador: (e) => { if (e) e.preventDefault(); this._go('buscador'); },
+      goSoporte: (e) => { if (e) e.preventDefault(); this._go('soporte'); },
       goUnidades: (e) => { if (e) e.preventDefault(); this._go('unidades'); },
       goGaleria: (e) => { if (e) e.preventDefault(); this._go('galeria'); },
       goUbicacion: (e) => { if (e) e.preventDefault(); this._go('ubicacion'); },
       todayISO: this._today(),
       minCheckout: s.checkin ? this._nextDay(s.checkin) : this._nextDay(this._today()),
+      maxCheckin: this._previousDay(this._maxReservationDate()),
+      maxCheckout: this._maxReservationDate(),
       form: { nombre: s.nombre, unidad: s.unidad, checkin: s.checkin, checkout: s.checkout, huespedes: s.huespedes, comentario: s.comentario },
+      openDatePicker: (e) => this._openDatePicker(e),
       onNombre: (e) => this._set('nombre', e.target.value),
       onUnidad: (e) => this._set('unidad', e.target.value),
       onCheckin: (e) => this._setCheckin(e.target.value),
-      onCheckout: (e) => this._set('checkout', e.target.value),
+      onCheckout: (e) => this._setCheckout(e.target.value),
       onHuespedes: (e) => this._set('huespedes', e.target.value),
       onComentario: (e) => this._set('comentario', e.target.value),
       consultar: () => this._consultar(),

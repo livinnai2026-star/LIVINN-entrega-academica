@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reseñas demostrativas | LIVINN</title>
+  <meta name="description" content="Opiniones ficticias creadas para mostrar el diseño de la experiencia LIVINN.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f5ead8">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png?v=20260817-round">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png?v=20260817-round">
+  <link rel="stylesheet" href="_ds/organic-5f98556b-10a2-4fb3-8f01-6522f7700a8b/styles.css">
+  <style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;overflow-x:clip}
+    body{margin:0;min-width:0;overflow-x:clip;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body)}
+    [id]{scroll-margin-top:96px}
+    a{color:var(--color-accent-700);text-decoration:none}
+    a:hover{color:var(--color-accent)}
+    :where(a):focus-visible{outline:3px solid var(--color-accent);outline-offset:3px}
+    .reviews-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--color-bg) 94%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-divider)}
+    .reviews-header-inner{max-width:1120px;margin:0 auto;padding:12px clamp(18px,5vw,56px);display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .reviews-brand{font-family:var(--font-heading);font-size:24px;letter-spacing:.06em;color:var(--color-text);display:inline-flex;align-items:center;gap:8px}
+    .reviews-brand-mark{width:32px;height:32px;display:block;flex:none;background:linear-gradient(135deg,var(--color-text) 0 62%,var(--color-accent) 62% 100%);-webkit-mask:url('img/brand/livinn-icon.png') center/contain no-repeat;mask:url('img/brand/livinn-icon.png') center/contain no-repeat}
+    .reviews-back{min-height:44px;padding:10px 16px;border:1px solid var(--color-divider);border-radius:999px;display:inline-flex;align-items:center;font-size:13px;font-weight:700;color:var(--color-text)}
+    .reviews-main{max-width:1060px;margin:0 auto;padding:clamp(44px,7vw,76px) clamp(18px,5vw,48px) 76px}
+    .reviews-kicker{margin:0 0 10px;color:var(--color-accent-700);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    h1,h2,h3{font-family:var(--font-heading);color:var(--color-text)}
+    h1{margin:0;font-size:clamp(34px,6vw,58px);line-height:1.06;max-width:15ch}
+    .reviews-lead{margin:18px 0 0;max-width:65ch;color:color-mix(in srgb,var(--color-text) 72%,transparent);font-size:17px;line-height:1.7}
+    .reviews-notice{margin:28px 0;padding:18px 20px;border-left:4px solid var(--color-accent);border-radius:0 var(--radius-md) var(--radius-md) 0;background:var(--color-surface);box-shadow:var(--shadow-sm);font-size:14px;line-height:1.65}
+    .reviews-index{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 46px}
+    .reviews-index a{min-height:44px;padding:11px 16px;border:1px solid var(--color-divider);border-radius:999px;background:var(--color-surface);display:inline-flex;align-items:center;font-size:13px;font-weight:700}
+    .unit-reviews{margin-top:42px;padding-top:6px}
+    .unit-reviews+.unit-reviews{padding-top:44px;border-top:1px solid var(--color-divider)}
+    .unit-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:20px;flex-wrap:wrap}
+    .unit-heading h2{margin:0;font-size:clamp(27px,4vw,38px)}
+    .unit-score{display:flex;align-items:center;gap:10px;padding:9px 13px;border-radius:999px;background:var(--color-neutral-100);border:1px solid var(--color-divider)}
+    .unit-score strong{font-family:var(--font-body);font-size:16px;font-weight:800;font-variant-numeric:tabular-nums}
+    .stars{--rating-percent:100%;position:relative;display:inline-block;font-size:20px;line-height:1;letter-spacing:2px;color:var(--color-neutral-400)}
+    .stars::before{content:'★★★★★';position:absolute;inset:0 auto 0 0;width:var(--rating-percent);overflow:hidden;white-space:nowrap;color:var(--color-accent)}
+    .reviews-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .review-card{padding:21px;border:1px solid var(--color-divider);border-radius:var(--radius-lg);background:var(--color-surface);box-shadow:var(--shadow-sm)}
+    .review-top{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+    .review-person{display:flex;align-items:center;gap:11px;min-width:0}
+    .review-avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--color-neutral-200);color:var(--color-accent-700);font-family:var(--font-heading);font-size:15px}
+    .review-name{margin:0;font-family:var(--font-heading);font-size:16px}
+    .review-unit{margin:3px 0 0;color:color-mix(in srgb,var(--color-text) 62%,transparent);font-size:11px}
+    .review-stars{color:var(--color-accent);letter-spacing:1px;white-space:nowrap;font-size:15px}
+    .review-text{margin:17px 0 18px;font-size:14px;line-height:1.7;color:color-mix(in srgb,var(--color-text) 78%,transparent)}
+    .demo-tag{display:inline-flex;align-items:center;min-height:28px;padding:5px 9px;border-radius:999px;background:var(--color-neutral-100);color:color-mix(in srgb,var(--color-text) 68%,transparent);font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+    .liv-footer{background:var(--color-neutral-900);color:var(--color-neutral-300)}
+    .liv-footer-grid{max-width:1100px;margin:0 auto;padding:20px clamp(18px,4vw,48px) 16px;display:grid;grid-template-columns:minmax(220px,1.15fr) minmax(210px,1fr) minmax(180px,.85fr) minmax(150px,.65fr);gap:clamp(16px,2.3vw,26px);align-items:start}
+    .liv-footer-grid>div{min-width:0;text-align:center}
+    .liv-footer-brand{font-family:var(--font-heading);font-size:23px;letter-spacing:.06em;color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+    .liv-footer-brand-mark{width:30px;height:30px;display:block;flex:none;background:linear-gradient(135deg,var(--color-bg) 0 62%,var(--color-accent) 62% 100%);-webkit-mask:url('img/brand/livinn-icon.png') center/contain no-repeat;mask:url('img/brand/livinn-icon.png') center/contain no-repeat}
+    .liv-footer-heading{font-family:var(--font-heading);color:#fff;font-size:14px;margin:0 0 5px}
+    .liv-footer-copy{margin:0 auto;font-size:12px;line-height:1.5;color:var(--color-neutral-400);max-width:38ch}
+    .liv-footer-list{list-style:none;margin:0;padding:0;display:grid;gap:2px;font-size:12px;line-height:1.4}
+    .liv-footer-contact-link{display:inline-flex;align-items:center;justify-content:center;gap:6px}
+    .liv-footer-contact-icon{width:15px;height:15px;flex:none;transform:translateY(-1px)}
+    .liv-footer-contact-link span{overflow-wrap:anywhere}
+    .liv-footer-list a,.liv-footer-policy-link{color:var(--color-accent-300)}
+    .liv-footer-list a:hover,.liv-footer-policy-link:hover{color:#fff}
+    .liv-footer-policy-links{display:grid;gap:2px}
+    .liv-footer-policy-link{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;min-height:27px;padding-inline:16px;font-size:12px;line-height:1.25;text-align:center;border-bottom:1px solid rgba(255,255,255,.09)}
+    .liv-footer-policy-link::after{content:'↗';position:absolute;right:2px;font-size:12px;color:var(--color-neutral-500)}
+    .liv-footer-brand,.liv-footer-socials{justify-content:center}
+    .liv-footer-socials{display:flex;gap:8px}
+    .liv-footer-social{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;color:var(--color-neutral-400)}
+    .liv-footer-social-note{margin:6px 0 0;font-size:10px;line-height:1.4;color:var(--color-neutral-500)}
+    .liv-footer-mobile-review{display:none}
+    .liv-footer-bottom{border-top:1px solid rgba(255,255,255,.1)}
+    .liv-footer-bottom-inner{max-width:1100px;margin:0 auto;padding:8px clamp(18px,4vw,48px);font-size:10px;line-height:1.35;color:var(--color-neutral-500);display:flex;justify-content:center;text-align:center;gap:6px 20px;flex-wrap:wrap}
+    @media(max-width:1000px){.liv-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:700px){.reviews-grid{grid-template-columns:1fr}}
+    @media(max-width:520px){
+      .reviews-header-inner{padding-inline:14px}.reviews-brand{font-size:21px}.reviews-brand-mark{width:28px;height:28px}.reviews-back{padding-inline:12px}
+      .reviews-main{padding-inline:16px}.review-card{padding:18px}.unit-score{width:100%;justify-content:center}
+      .liv-footer-grid{padding:14px 16px 12px;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:10px}.liv-footer-intro{grid-column:1/-1;grid-row:1;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:10px}.liv-footer-info{grid-column:1/-1;grid-row:2}.liv-footer-contact{grid-column:1;grid-row:3}.liv-footer-networks{grid-column:2;grid-row:3}.liv-footer-brand{font-size:21px;margin-bottom:0;gap:7px}.liv-footer-brand-mark{width:27px;height:27px}.liv-footer-heading{font-size:13px;margin-bottom:5px}.liv-footer-copy{font-size:11px;line-height:1.4}.liv-footer-list{gap:2px;font-size:11px;line-height:1.35}.liv-footer-contact .liv-footer-list{grid-template-columns:minmax(0,1fr)}.liv-footer-contact .liv-footer-list li:last-child{grid-column:1}.liv-footer-policy-link{min-height:27px;font-size:11px}.liv-footer-social{width:30px;height:30px}.liv-footer-social-note{margin-top:5px;font-size:9px}.liv-footer-bottom-inner{padding:7px 16px;display:grid;gap:2px;font-size:9px}
+      .liv-footer-desktop-review{display:flex}.liv-footer-mobile-review{display:none}.liv-footer-info .liv-footer-policy-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 10px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="reviews-header">
+    <div class="reviews-header-inner">
+      <a class="reviews-brand" href="index.html" aria-label="Volver al inicio de LIVINN"><span class="reviews-brand-mark" aria-hidden="true"></span><span>LIVINN</span></a>
+      <a class="reviews-back" href="index.html#unidades">← Volver a unidades</a>
+    </div>
+  </header>
+
+  <main class="reviews-main">
+    <p class="reviews-kicker">Experiencia de huéspedes</p>
+    <h1>Reseñas de las unidades</h1>
+    <p class="reviews-lead">Conoce las experiencias de quienes eligieron cada unidad y encuentra el refugio que mejor se adapta a tu próxima escapada.</p>
+
+    <div class="reviews-notice" role="note">
+      <strong>Contenido demostrativo.</strong> Las opiniones, nombres y puntuaciones de esta página son ficticios y fueron creados únicamente para mostrar el diseño del proyecto académico. No corresponden a huéspedes ni reservas reales.
+    </div>
+
+    <nav class="reviews-index" aria-label="Ir a reseñas por unidad">
+      <a href="#arrayan">Cabaña Arrayán</a><a href="#mirador">Cabaña Mirador</a><a href="#lago">Lodge del Lago</a><a href="#refugio">Refugio del Bosque</a>
+    </nav>
+
+    <section class="unit-reviews" id="arrayan" aria-labelledby="arrayan-title">
+      <div class="unit-heading"><h2 id="arrayan-title">Cabaña Arrayán</h2><div class="unit-score"><span class="stars" style="--rating-percent:100%" role="img" aria-label="5 de 5 estrellas">★★★★★</span><strong>5.0</strong><span>4 reseñas</span></div></div>
+      <div class="reviews-grid">
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">MS</span><div><h3 class="review-name">Martín S.</h3><p class="review-unit">Cabaña Arrayán</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">El bosque, la cabaña y la tranquilidad estuvieron increíbles. Un saludo especial para Raúl y compañeros que están viendo el proyecto en directo.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">LC</span><div><h3 class="review-name">Luis C.</h3><p class="review-unit">Cabaña Arrayán</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">Una cabaña compacta, bien distribuida y rodeada de pinos. Ideal para desconectarse un fin de semana.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">MF</span><div><h3 class="review-name">Mariana F.</h3><p class="review-unit">Cabaña Arrayán</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">Nos gustó mucho la ambientación de madera y tener una cocineta equipada. Una experiencia tranquila y acogedora.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">DP</span><div><h3 class="review-name">Diego P.</h3><p class="review-unit">Cabaña Arrayán</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">La vista al bosque desde la cabaña fue lo mejor. Todo invita a bajar el ritmo y disfrutar del entorno.</p><span class="demo-tag">Reseña demostrativa</span></article>
+      </div>
+    </section>
+
+    <section class="unit-reviews" id="mirador" aria-labelledby="mirador-title">
+      <div class="unit-heading"><h2 id="mirador-title">Cabaña Mirador</h2><div class="unit-score"><span class="stars" style="--rating-percent:100%" role="img" aria-label="5 de 5 estrellas">★★★★★</span><strong>5.0</strong><span>4 reseñas</span></div></div>
+      <div class="reviews-grid">
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">NR</span><div><h3 class="review-name">Natalia R.</h3><p class="review-unit">Cabaña Mirador</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">La terraza y las ventanas amplias hacen que el paisaje sea parte de la cabaña. Muy cómoda para una familia pequeña.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">JM</span><div><h3 class="review-name">Jorge M.</h3><p class="review-unit">Cabaña Mirador</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">Nos encantó desayunar mirando la sierra. La sala y la cocina tienen una distribución muy práctica.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">CP</span><div><h3 class="review-name">Camila P.</h3><p class="review-unit">Cabaña Mirador</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">El espacio se siente luminoso, privado y conectado con la naturaleza. La terraza fue nuestra parte favorita.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">TG</span><div><h3 class="review-name">Tomás G.</h3><p class="review-unit">Cabaña Mirador</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">Una opción excelente para descansar sin sentirse encerrado. Las vistas y la calidez interior se complementan muy bien.</p><span class="demo-tag">Reseña demostrativa</span></article>
+      </div>
+    </section>
+
+    <section class="unit-reviews" id="lago" aria-labelledby="lago-title">
+      <div class="unit-heading"><h2 id="lago-title">Lodge del Lago</h2><div class="unit-score"><span class="stars" style="--rating-percent:100%" role="img" aria-label="5 de 5 estrellas">★★★★★</span><strong>5.0</strong><span>4 reseñas</span></div></div>
+      <div class="reviews-grid">
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">PB</span><div><h3 class="review-name">Paula B.</h3><p class="review-unit">Lodge del Lago</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">La terraza frente al agua crea un ambiente precioso para compartir. Hay espacio suficiente para que todos estén cómodos.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">RM</span><div><h3 class="review-name">Ricardo M.</h3><p class="review-unit">Lodge del Lago</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">La cocina completa y la sala amplia nos facilitaron mucho la estancia familiar. La vista al lago suma muchísimo.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">GC</span><div><h3 class="review-name">Gabriela C.</h3><p class="review-unit">Lodge del Lago</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">Muy buena distribución para un grupo. La terraza fue el lugar donde más tiempo pasamos durante la visita.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">FS</span><div><h3 class="review-name">Fernando S.</h3><p class="review-unit">Lodge del Lago</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">Se siente como un refugio familiar completo. Amanecer junto al agua fue una experiencia memorable.</p><span class="demo-tag">Reseña demostrativa</span></article>
+      </div>
+    </section>
+
+    <section class="unit-reviews" id="refugio" aria-labelledby="refugio-title">
+      <div class="unit-heading"><h2 id="refugio-title">Refugio del Bosque</h2><div class="unit-score"><span class="stars" style="--rating-percent:100%" role="img" aria-label="5 de 5 estrellas">★★★★★</span><strong>5.0</strong><span>4 reseñas</span></div></div>
+      <div class="reviews-grid">
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">AR</span><div><h3 class="review-name">Andrea R.</h3><p class="review-unit">Refugio del Bosque</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">La chimenea y la amplitud de la cabaña hicieron que todo el grupo se sintiera muy cómodo. Un espacio cálido para compartir sin perder privacidad.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">VA</span><div><h3 class="review-name">Valeria A.</h3><p class="review-unit">Refugio del Bosque</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">Perfecto para reunir a toda la familia sin perder comodidad. La sala y la chimenea se volvieron el centro del viaje.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">HG</span><div><h3 class="review-name">Héctor G.</h3><p class="review-unit">Refugio del Bosque</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">Mucho espacio, buena distribución y un exterior ideal para convivir. La tina y el fogatero hacen la diferencia.</p><span class="demo-tag">Reseña demostrativa</span></article>
+        <article class="review-card"><div class="review-top"><div class="review-person"><span class="review-avatar">IL</span><div><h3 class="review-name">Isabel L.</h3><p class="review-unit">Refugio del Bosque</p></div></div><span class="review-stars" aria-label="5 de 5 estrellas">★★★★★</span></div><p class="review-text">Nos gustó que el grupo pudiera compartir las áreas comunes y al mismo tiempo descansar con privacidad.</p><span class="demo-tag">Reseña demostrativa</span></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="liv-footer">
+    <div class="liv-footer-grid">
+      <div class="liv-footer-intro"><div class="liv-footer-brand"><span class="liv-footer-brand-mark" aria-hidden="true"></span><span>LIVINN</span></div><p class="liv-footer-copy">Cabañas de madera en Llano Grande, Durango, sobre la Carretera Durango - Mazatlán km 80.</p></div>
+      <div class="liv-footer-contact"><h3 class="liv-footer-heading">Contacto</h3><ul class="liv-footer-list"><li><a class="liv-footer-contact-link" href="https://wa.me/5216672364294" target="_blank" rel="noopener" aria-label="WhatsApp: +5216672364294"><svg class="liv-footer-contact-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.66 15L2 22l5.15-1.35A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.08-1.12l-.29-.17-3.05.8.81-2.97-.19-.3A8 8 0 1 1 12 20Zm4.38-5.46c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.19-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2s.86 2.32.98 2.48c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.58.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/></svg><span>+5216672364294</span></a></li><li><a class="liv-footer-contact-link" href="mailto:livinnai2026@gmail.com" aria-label="Correo electrónico: livinnai2026@gmail.com"><svg class="liv-footer-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><span>livinnai2026@gmail.com</span></a></li><li style="color:var(--color-neutral-400)">Carretera Durango - Mazatlán km 80, Llano Grande, Dgo.</li></ul></div>
+      <div class="liv-footer-info"><h3 class="liv-footer-heading">Información</h3><div class="liv-footer-policy-links"><a class="liv-footer-policy-link" href="politicas.html#alojamiento" target="_blank" rel="noopener">Políticas de alojamiento</a><a class="liv-footer-policy-link" href="politicas.html#privacidad" target="_blank" rel="noopener">Privacidad y datos</a><a class="liv-footer-policy-link liv-footer-desktop-review" href="resenas.html">Reseñas</a><a class="liv-footer-policy-link" href="https://github.com/livinnai2026-star/LIVINN-entrega-academica" target="_blank" rel="noopener noreferrer">Repositorio GitHub</a></div></div>
+      <div class="liv-footer-networks"><h3 class="liv-footer-heading">Redes</h3><div class="liv-footer-socials"><span class="liv-footer-social" role="img" aria-label="Instagram — por configurar" title="Instagram — por configurar (demostración)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></span><span class="liv-footer-social" role="img" aria-label="Facebook — por configurar" title="Facebook — por configurar (demostración)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></span></div><p class="liv-footer-social-note">Perfiles demostrativos,<br>aún sin configurar.</p><a class="liv-footer-policy-link liv-footer-mobile-review" href="resenas.html">Reseñas</a></div>
+    </div>
+    <div class="liv-footer-bottom"><div class="liv-footer-bottom-inner"><span>© 2026 LIVINN. Sitio demostrativo — proyecto académico.</span><span>Disponibilidad sujeta a confirmación. Sin cobros en línea.</span></div></div>
+  </footer>
+</body>
+</html>

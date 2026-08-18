@@ -31,6 +31,22 @@ Validación administrativa
 
 La landing no se conecta directamente a Google Calendar o Google Sheets y no confirma disponibilidad ni pagos de forma automática.
 
+## Herramientas utilizadas
+
+LIVINN combinó desarrollo web, inteligencia artificial generativa, producción audiovisual, automatización y servicios cloud.
+
+| Etapa | Herramientas | Uso principal |
+|---|---|---|
+| Experiencia web | HTML5, CSS3, JavaScript, ChatGPT y Codex | Construcción, integración visual, responsive, accesibilidad, pruebas y documentación |
+| Producción visual | Gemini y generación de imágenes de OpenAI | Creación y adaptación de recursos visuales para representar el MVP |
+| Publicidad | Google Flow con Veo | Generación de clips verticales a partir de las imágenes aprobadas |
+| Presentación académica | NotebookLM | Creación del caso de estudio audiovisual desde fuentes y capturas sanitizadas |
+| Procesamiento y QA | PowerShell, Python HTTP Server y FFmpeg | Automatización de tareas, pruebas locales, exportación y validación audiovisual |
+| Versionado y publicación | Git, GitHub y Vercel | Historial, ramas, respaldos, repositorio académico y publicación automática |
+| Canal e infraestructura | WhatsApp, VPS, Docker, Dokploy, Hermes Agent y OpenRouter | Atención conversacional y ejecución del asistente de reservas |
+| Integraciones operativas | MCP de Composio, Google Calendar, Google Sheets y Gmail | Consulta de disponibilidad, registro de solicitudes, creación de eventos y confirmaciones |
+| Ubicación | Google Maps | Presentación de la ubicación y acceso a indicaciones desde la web |
+
 ## Equipo
 
 - **Iván:** integración visual y funcional de la web, experiencia responsive, accesibilidad, formulario de WhatsApp, pruebas, auditorías, GitHub, respaldos y Vercel.
