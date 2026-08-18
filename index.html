@@ -3,6 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LIVINN | Cabañas en Llano Grande, Durango</title>
+<meta name="description" content="LIVINN — cabañas de madera en Carretera Durango - Mazatlán km 80, Llano Grande, Dgo. Conoce las unidades y consulta fechas por WhatsApp.">
+<meta name="theme-color" content="#f5ead8">
+<link rel="canonical" href="https://mvp-livinn.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="LIVINN">
+<meta property="og:url" content="https://mvp-livinn.vercel.app/">
+<meta property="og:title" content="LIVINN | Cabañas en Llano Grande, Durango">
+<meta property="og:description" content="Cabañas de madera en Llano Grande, Durango. Conoce las unidades y consulta fechas por WhatsApp.">
+<meta property="og:image" content="https://mvp-livinn.vercel.app/img/og-livinn-v3.jpg">
+<meta property="og:image:secure_url" content="https://mvp-livinn.vercel.app/img/og-livinn-v3.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cabaña LIVINN entre bosque y montaña en Llano Grande, Durango">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LIVINN | Cabañas en Llano Grande, Durango">
+<meta name="twitter:description" content="Conoce las unidades LIVINN y consulta fechas por WhatsApp.">
+<meta name="twitter:image" content="https://mvp-livinn.vercel.app/img/og-livinn-v3.jpg">
 <link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png?v=20260817-round">
 <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png?v=20260817-round">
 <script src="./support.js"></script>
@@ -10,17 +30,6 @@
 <body>
 <x-dc>
 <helmet>
-<title>LIVINN | Cabañas en Llano Grande, Durango</title>
-<meta name="description" content="LIVINN — cabañas de madera en Carretera Durango - Mazatlán km 80, Llano Grande, Dgo. Consulta disponibilidad por WhatsApp.">
-<meta name="theme-color" content="#f5ead8">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="es_MX">
-<meta property="og:title" content="LIVINN | Cabañas en Llano Grande, Durango">
-<meta property="og:description" content="Cabañas de madera en Carretera Durango - Mazatlán km 80, Llano Grande, Dgo. Consulta disponibilidad por WhatsApp.">
-<meta property="og:image" content="https://mvp-livinn.vercel.app/img/og-livinn.jpg">
-<link rel="canonical" href="https://mvp-livinn.vercel.app/">
-<link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png?v=20260817-round">
-<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png?v=20260817-round">
 <link rel="stylesheet" href="_ds/organic-5f98556b-10a2-4fb3-8f01-6522f7700a8b/styles.css">
 <script src="_ds/organic-5f98556b-10a2-4fb3-8f01-6522f7700a8b/_ds_bundle.js"></script>
 <style>
@@ -130,7 +139,7 @@
     .liv-lightbox-mobile-hint{display:block}
   }
   @media (max-width:600px){
-    .liv-hero-image{object-position:64% center!important}
+    .liv-hero-image{object-position:64% center!important;transform:translateY(-10px) scale(1.035);transform-origin:center}
     .liv-hero-overlay{background:linear-gradient(90deg,rgba(20,19,17,.88) 0%,rgba(20,19,17,.68) 45%,rgba(20,19,17,.18) 78%),linear-gradient(180deg,rgba(30,28,24,.12) 0%,rgba(30,28,24,.2) 38%,rgba(30,28,24,.8) 100%)!important}
     .liv-hero-content{align-self:stretch;display:flex;padding:42px 20px 30px!important}
     .liv-hero-copy{width:min(58vw,230px);max-width:calc(100vw - 40px);height:100%;position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between}
@@ -452,7 +461,7 @@
         <div class="liv-footer-policy-links">
           <a class="liv-footer-policy-link" href="politicas.html#alojamiento" target="_blank" rel="noopener">Políticas de alojamiento</a>
           <a class="liv-footer-policy-link" href="politicas.html#privacidad" target="_blank" rel="noopener">Privacidad y datos</a>
-          <a class="liv-footer-policy-link liv-footer-desktop-review" href="resenas.html">Reseñas</a>
+          <a class="liv-footer-policy-link liv-footer-desktop-review" href="resenas.html" target="_blank" rel="noopener">Reseñas</a>
           <a class="liv-footer-policy-link" href="https://github.com/livinnai2026-star/LIVINN-entrega-academica" target="_blank" rel="noopener noreferrer">Repositorio GitHub</a>
         </div>
       </div>
@@ -473,7 +482,7 @@
           </sc-if>
         </div>
         <p class="liv-footer-social-note">Perfiles demostrativos,<br>aún sin configurar.</p>
-        <a class="liv-footer-policy-link liv-footer-mobile-review" href="resenas.html">Reseñas</a>
+        <a class="liv-footer-policy-link liv-footer-mobile-review" href="resenas.html" target="_blank" rel="noopener">Reseñas</a>
       </div>
     </div>
     <div class="liv-footer-bottom">
@@ -535,7 +544,7 @@
               </div>
               <div class="liv-rating-card">
                 <div class="liv-rating-row"><span class="liv-stars" style="--rating-percent:{{ activeUnit.ratingPercent }}" role="img" aria-label="{{ activeUnit.ratingAria }}">★★★★★</span><strong class="liv-rating-score">{{ activeUnit.rating }}</strong><span style="font-size:12px;color:color-mix(in srgb,var(--color-text) 64%,transparent)">4 reseñas</span></div>
-                <a class="liv-rating-link" href="{{ activeUnit.reviewsHref }}">Leer reseñas →</a>
+                <a class="liv-rating-link" href="{{ activeUnit.reviewsHref }}" target="_blank" rel="noopener">Leer reseñas →</a>
               </div>
             </div>
           </div>
