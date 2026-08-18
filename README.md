@@ -1,6 +1,6 @@
 # LIVINN — MVP de experiencia y reservas
 
-[Ver sitio publicado](https://mvp-livinn.vercel.app/) · [Ver versión anterior](https://mvp-livinn-anterior.vercel.app/)
+[Ver sitio publicado](https://mvp-livinn.vercel.app/) · [Ver versión inicial](https://livinn-six.vercel.app/)
 
 ![Mapa de presentación de LIVINN](produccion_video/mapa_presentacion_livinn_final.jpg)
 
