@@ -31,6 +31,16 @@ Validación administrativa
 
 La landing no se conecta directamente a Google Calendar o Google Sheets y no confirma disponibilidad ni pagos de forma automática.
 
+## Evolución del proyecto
+
+La [versión inicial](https://livinn-six.vercel.app/) se conserva como referencia histórica del primer prototipo. La [versión actual](https://mvp-livinn.vercel.app/) representa el MVP integrado y es la única que debe utilizarse para probar el flujo vigente.
+
+| Etapa | Alcance |
+|---|---|
+| Prototipo inicial | Primera estructura visual, dos alojamientos de muestra y contacto demostrativo. |
+| MVP actual | Cuatro unidades, 23 posiciones visuales, diseño responsive, formulario estructurado de WhatsApp, navegación móvil, accesibilidad, políticas y reseñas demostrativas. |
+| Integración operativa | Consulta de disponibilidad, registro en Sheets, evento en Calendar, correo por Gmail y validación administrativa. |
+
 ## Herramientas utilizadas
 
 LIVINN combinó desarrollo web, inteligencia artificial generativa, producción audiovisual, automatización y servicios cloud.

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -80,6 +80,8 @@
   .liv-image-button img{width:100%;height:100%;object-fit:cover;transition:transform .2s ease}
   .liv-image-button:hover img{transform:scale(1.025)}
   .liv-availability-note{max-width:420px;border-left:4px solid var(--color-accent-2-500);padding:10px 0 10px 16px}
+  .liv-capacity-note{margin:8px 2px 0;font-size:12px;line-height:1.45;color:color-mix(in srgb,var(--color-text) 68%,transparent)}
+  .liv-capacity-note.is-over{color:var(--color-accent-800);font-weight:700}
   .liv-modal-header{position:sticky;top:0;z-index:3;background:var(--color-surface);padding:20px clamp(22px,3vw,34px);border-bottom:1px solid var(--color-divider)}
   .liv-modal-body{padding:24px clamp(22px,3vw,34px) clamp(22px,3vw,34px)}
   .liv-lightbox-shell{display:grid;gap:10px;justify-items:center;max-width:94vw}
@@ -252,7 +254,7 @@
   <section id="unidades" style="max-width:1180px;margin:0 auto;padding:clamp(56px,9vw,104px) clamp(16px,5vw,64px) 0">
     <span style="display:block;color:var(--color-accent-700);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:13px;margin-bottom:10px">Nuestras unidades</span>
     <h2 style="font-size:clamp(28px,4vw,44px);margin:0 0 10px;max-width:20ch">Cuatro refugios, un mismo bosque</h2>
-    <p style="max-width:56ch;font-size:16px;color:color-mix(in srgb,var(--color-text) 72%,transparent);margin:0 0 36px">Desde una escapada en pareja hasta la casa grande para todo el grupo. Elige la tuya y consulta las fechas.</p>
+    <p style="max-width:56ch;font-size:16px;color:color-mix(in srgb,var(--color-text) 72%,transparent);margin:0 0 36px">Desde una estancia en pareja hasta la casa grande para todo el grupo. Elige la tuya y consulta las fechas.</p>
 
     <div role="list" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:26px;align-items:stretch">
       <sc-for list="{{ units }}" as="unit" hint-placeholder-count="4">
@@ -405,11 +407,6 @@
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
           <div class="field"><label for="liv-checkin">Fecha de ingreso</label><input id="liv-checkin" class="input" type="date" min="{{ todayISO }}" max="{{ maxCheckin }}" value="{{ form.checkin }}" onClick="{{ openDatePicker }}" onInput="{{ onCheckin }}" required></div>
           <div class="field"><label for="liv-checkout">Fecha de salida</label><input id="liv-checkout" class="input" type="date" min="{{ minCheckout }}" max="{{ maxCheckout }}" value="{{ form.checkout }}" onClick="{{ openDatePicker }}" onInput="{{ onCheckout }}" required></div>
-          <div class="field"><label for="liv-huespedes">Huéspedes</label>
-            <select id="liv-huespedes" class="input" value="{{ form.huespedes }}" onChange="{{ onHuespedes }}">
-              <option value="1">1 huésped</option><option value="2">2 huéspedes</option><option value="3">3 huéspedes</option><option value="4">4 huéspedes</option><option value="5">5 huéspedes</option><option value="6">6 huéspedes</option><option value="7">7 huéspedes</option><option value="8">8 huéspedes</option><option value="9">9 huéspedes</option><option value="10">10 huéspedes</option>
-            </select>
-          </div>
           <div class="field"><label for="liv-unidad">Unidad preferida</label>
             <select id="liv-unidad" class="input" value="{{ form.unidad }}" onChange="{{ onUnidad }}">
               <option value="">Sin preferencia</option>
@@ -418,6 +415,12 @@
               <option value="Lodge del Lago">Lodge del Lago</option>
               <option value="Refugio del Bosque">Refugio del Bosque</option>
             </select>
+          </div>
+          <div class="field"><label for="liv-huespedes">Huéspedes</label>
+            <select id="liv-huespedes" class="input" value="{{ form.huespedes }}" onChange="{{ onHuespedes }}" aria-describedby="liv-capacity-note">
+              <option value="1">1 huésped</option><option value="2">2 huéspedes</option><option value="3">3 huéspedes</option><option value="4">4 huéspedes</option><option value="5">5 huéspedes</option><option value="6">6 huéspedes</option><option value="7">7 huéspedes</option><option value="8">8 huéspedes</option><option value="9">9 huéspedes</option><option value="10">10 huéspedes</option>
+            </select>
+            <p id="liv-capacity-note" class="liv-capacity-note {{ capacityNoteClass }}" style="display:{{ capacityNoteDisplay }}" aria-live="polite">{{ capacityNote }}</p>
           </div>
           <div class="field"><label for="liv-nombre">Tu nombre</label><input id="liv-nombre" class="input" type="text" autocomplete="name" placeholder="¿Cómo te llamas?" value="{{ form.nombre }}" onInput="{{ onNombre }}" required></div>
           <div class="field" style="grid-column:1/-1"><label for="liv-comentario">Detalles de tu consulta (opcional)</label><textarea id="liv-comentario" class="input" style="border-radius:14px" placeholder="Escribe aquí cualquier detalle: mascotas, horario estimado de llegada u ocasión especial." value="{{ form.comentario }}" onInput="{{ onComentario }}"></textarea></div>
@@ -637,8 +640,8 @@ class Component extends DCLogic {
   _units() {
     const mk = (...args) => this._image(...args);
     return [
-      { slug: 'arrayan', nombre: 'Cabaña Arrayán', cap: '2 personas', rating: '5.0', ratingPercent: '100%',
-        ideal: 'Una escapada íntima en pareja, lejos del ruido.', price: '$900', pricePrefix: '', priceNote: '',
+      { slug: 'arrayan', nombre: 'Cabaña Arrayán', cap: '2 personas', maxGuests: 2, rating: '5.0', ratingPercent: '100%',
+        ideal: 'Una estancia tranquila en pareja, lejos del ruido.', price: '$900', pricePrefix: '', priceNote: '',
         resumen: 'Un refugio de madera con chimenea y vista directa a los pinos.',
         ambientes: 'Cabaña de espacio abierto con cama matrimonial, cocineta equipada y baño completo privado.',
         clave: ['Chimenea', 'Wi‑Fi', 'Vista al bosque'],
@@ -649,7 +652,7 @@ class Component extends DCLogic {
           mk('arrayan-cocina', 'cocina', 'Cocineta', 'Cocineta de madera equipada de la Cabaña Arrayán', 'img/unidades/arrayan/cocina.webp', 1448, 1086),
           mk('arrayan-bano', 'bano', 'Baño', 'Baño completo de madera y piedra de la Cabaña Arrayán', 'img/unidades/arrayan/bano.webp', 1448, 1086),
         ] },
-      { slug: 'mirador', nombre: 'Cabaña Mirador', cap: '2 a 4 personas', rating: '5.0', ratingPercent: '100%',
+      { slug: 'mirador', nombre: 'Cabaña Mirador', cap: '2 a 4 personas', maxGuests: 4, rating: '5.0', ratingPercent: '100%',
         ideal: 'Una pareja o una familia pequeña que busca espacio y vistas.', price: '$1,500', pricePrefix: '', priceNote: '',
         resumen: 'Cabaña luminosa con terraza y una vista abierta a la sierra.',
         ambientes: 'Una habitación, sala con sofá cama, cocina integrada y terraza.',
@@ -661,7 +664,7 @@ class Component extends DCLogic {
           mk('mirador-dormitorio', 'dormitorio', 'Dormitorio', 'Dormitorio luminoso de la Cabaña Mirador', 'img/unidades/mirador/dormitorio.webp', 1448, 1086),
           mk('mirador-terraza', 'terraza', 'Terraza', 'Terraza de la Cabaña Mirador abierta a la sierra', 'img/unidades/mirador/terraza.webp', 1448, 1086),
         ] },
-      { slug: 'lago', nombre: 'Lodge del Lago', cap: '4 a 6 personas', rating: '5.0', ratingPercent: '100%',
+      { slug: 'lago', nombre: 'Lodge del Lago', cap: '4 a 6 personas', maxGuests: 6, rating: '5.0', ratingPercent: '100%',
         ideal: 'Disfrutar en familia con el agua a pasos de la puerta.', price: '$3,000', pricePrefix: 'Desde ', priceNote: 'Precio final sujeto a validación administrativa.',
         resumen: 'Espacioso lodge de madera a la orilla del lago, pensado para familias.',
         ambientes: 'Dos habitaciones, sala-comedor, cocina completa y terraza exterior.',
@@ -673,7 +676,7 @@ class Component extends DCLogic {
           mk('lago-dormitorio', 'dormitorio', 'Dormitorio', 'Dormitorio del Lodge del Lago con vista al agua', 'img/unidades/lago/dormitorio.webp', 1448, 1086),
           mk('lago-deck', 'deck', 'Terraza', 'Terraza exterior del Lodge del Lago frente al agua', 'img/unidades/lago/deck.webp', 1448, 1086),
         ] },
-      { slug: 'refugio', nombre: 'Refugio del Bosque', cap: '6 a 10 personas', rating: '5.0', ratingPercent: '100%',
+      { slug: 'refugio', nombre: 'Refugio del Bosque', cap: '6 a 10 personas', maxGuests: 10, rating: '5.0', ratingPercent: '100%',
         ideal: 'Grupos grandes y reuniones que buscan compartir el mismo espacio.', price: '$4,000', pricePrefix: '', priceNote: '',
         resumen: 'Nuestra unidad más amplia, rodeada de bosque, con fogatero y tina exterior.',
         ambientes: 'Tres habitaciones, dos baños, sala amplia con chimenea y terraza con parrilla.',
@@ -866,7 +869,7 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
-    try { document.documentElement.lang = 'es'; } catch (e) {}
+    try { document.documentElement.lang = 'es-MX'; } catch (e) {}
     try { document.title = 'LIVINN | Cabañas en Llano Grande, Durango'; } catch (e) {}
     try { if (window.location.hash === '#top') history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
     this._escMenu = (e) => {
@@ -1096,6 +1099,14 @@ class Component extends DCLogic {
     const navLinks = nav.map((n) => ({ href: '#' + n.id, label: n.label, go: (e) => { if (e) e.preventDefault(); this._go(n.id); } }));
 
     const allUnits = this._units();
+    const selectedUnit = allUnits.find((u) => u.nombre === s.unidad) || null;
+    const guestCount = Number.parseInt(s.huespedes, 10) || 0;
+    const capacityExceeded = !!selectedUnit && guestCount > selectedUnit.maxGuests;
+    const capacityNote = selectedUnit
+      ? (capacityExceeded
+        ? 'Esta unidad admite hasta ' + selectedUnit.maxGuests + ' huéspedes. Podemos ayudarte a elegir otra opción.'
+        : 'Esta unidad admite hasta ' + selectedUnit.maxGuests + ' huéspedes.')
+      : '';
     const units = allUnits.map((u) => ({
       ...u, priceLabel: this._price(u), exterior: u.spaces[0],
       cardAria: 'Ver detalles de ' + u.nombre + '; puntuación demostrativa: 5 de 5 estrellas',
@@ -1126,7 +1137,7 @@ class Component extends DCLogic {
       stageClass: 'liv-lightbox-stage' + (lbState && lbState.zoom ? ' is-zoomed' : ''),
       imageClass: 'liv-lightbox-image' + (lbState && lbState.zoom ? ' is-zoomed' : ''),
       zoomLabel: lbState && lbState.zoom ? 'Reducir imagen' : 'Ampliar imagen',
-      mobileHint: lbState && lbState.zoom ? 'Arrastrá para recorrer · Doble toque para reducir' : 'Deslizá o usá las flechas · Doble toque para ampliar',
+      mobileHint: lbState && lbState.zoom ? 'Arrastra para recorrer · Doble toque para reducir' : 'Desliza o usa las flechas · Doble toque para ampliar',
     };
 
     const faqData = [
@@ -1182,6 +1193,9 @@ class Component extends DCLogic {
       dialogRef: (el) => { this._dialog = el; },
       stop: (e) => e.stopPropagation(),
       warning: s.warning, hasWarning: !!s.warning,
+      capacityNote,
+      capacityNoteClass: capacityExceeded ? 'is-over' : '',
+      capacityNoteDisplay: selectedUnit ? 'block' : 'none',
       faqs,
       lightbox, lightboxOpen: !!s.lightbox,
       closeLightbox: (e) => this._closeLightbox(e),

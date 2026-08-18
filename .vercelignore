@@ -1,0 +1,12 @@
+auditoria_codex/
+produccion_video/
+prompts_imagenes/
+uploads/
+img/**/master/
+img/**/rechazadas/
+img/dron/
+*.zip
+LIVINN Cabañas.html
+LIVINN-standalone.dc.html
+README*.md
+IMAGE_MANIFEST.md

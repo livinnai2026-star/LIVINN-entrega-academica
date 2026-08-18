@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /auditoria_codex/
+Disallow: /produccion_video/
+Disallow: /prompts_imagenes/
+Disallow: /uploads/
+Disallow: /LIVINN.dc.html
+Disallow: /LIVINN-standalone.dc.html
+Disallow: /LIVINN%20Caba%C3%B1as.html
+
+Sitemap: https://mvp-livinn.vercel.app/sitemap.xml
