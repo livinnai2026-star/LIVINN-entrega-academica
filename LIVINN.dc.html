@@ -132,8 +132,9 @@
   @media (max-width:600px){
     .liv-hero-image{object-position:64% center!important}
     .liv-hero-overlay{background:linear-gradient(90deg,rgba(20,19,17,.88) 0%,rgba(20,19,17,.68) 45%,rgba(20,19,17,.18) 78%),linear-gradient(180deg,rgba(30,28,24,.12) 0%,rgba(30,28,24,.2) 38%,rgba(30,28,24,.8) 100%)!important}
-    .liv-hero-content{padding:0 20px 34px!important}
-    .liv-hero-copy{width:min(58vw,230px);max-width:calc(100vw - 40px);position:relative;z-index:1}
+    .liv-hero-content{align-self:stretch;display:flex;padding:42px 20px 30px!important}
+    .liv-hero-copy{width:min(58vw,230px);max-width:calc(100vw - 40px);height:100%;position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between}
+    .liv-hero-heading-group,.liv-hero-bottom-group{width:100%}
     .liv-hero-copy h1{font-size:clamp(30px,8.7vw,36px)!important;line-height:1.02!important;max-width:9ch!important}
     .liv-hero-copy>p:first-child{font-size:10px!important;line-height:1.4;max-width:24ch;margin-bottom:11px!important}
     .liv-hero-description{font-size:14px!important;line-height:1.42!important;margin-top:14px!important;max-width:24ch!important}
@@ -221,8 +222,11 @@
     <div class="liv-hero-overlay" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,27,24,.78) 0%,rgba(28,27,24,.38) 54%,rgba(28,27,24,.08) 78%),linear-gradient(180deg,rgba(46,43,37,.18) 0%,rgba(46,43,37,.22) 45%,rgba(46,43,37,.70) 100%);pointer-events:none"></div>
     <div class="liv-hero-content" style="position:relative;width:100%;max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,64px) clamp(48px,8vw,84px)">
       <div class="liv-hero-copy">
+      <div class="liv-hero-heading-group">
       <p style="color:var(--color-accent-200);font-family:var(--font-body);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:13px;margin:0 0 16px">Llano Grande · Carretera Durango - Mazatlán km 80</p>
       <h1 style="font-family:var(--font-heading);color:#fff;font-size:clamp(36px,6vw,74px);line-height:1.05;letter-spacing:-.01em;margin:0;max-width:16ch;text-wrap:balance">Cabañas, confort y naturaleza</h1>
+      </div>
+      <div class="liv-hero-bottom-group">
       <p class="liv-hero-description" style="color:rgba(255,255,255,.92);font-size:clamp(16px,2vw,20px);line-height:1.6;max-width:52ch;margin:22px 0 0;text-wrap:pretty"><span class="liv-desktop-copy">Descubre el equilibrio entre la calidez de nuestras unidades y el silencio del pinar, a un paso de tu puerta.</span><span class="liv-mobile-copy">Calidez, confort y el silencio del pinar a un paso de tu puerta.</span></p>
       <div class="liv-hero-actions" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:30px">
         <button type="button" class="btn btn-primary liv-hero-cta" style="padding:14px 26px;font-size:16px;min-height:48px" onClick="{{ goUnidades }}">Ver unidades</button>
@@ -230,6 +234,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
           Consultar fechas
         </button>
+      </div>
       </div>
       </div>
     </div>
@@ -423,7 +428,7 @@
             Hablar con soporte
           </a>
         </div>
-        <p style="margin:12px 0 0;font-size:12px;line-height:1.5;color:color-mix(in srgb,var(--color-text) 58%,transparent)">“Enviar consulta” prepara un mensaje con tus datos. “Hablar con soporte” abre una conversación general sin completar el formulario.</p>
+        <p style="margin:12px auto 0;text-align:center;font-size:12px;line-height:1.5;color:color-mix(in srgb,var(--color-text) 58%,transparent)">“Enviar consulta” prepara un mensaje con tus datos. “Hablar con soporte” abre una conversación general sin completar el formulario.</p>
       </div>
     </div>
   </section>
